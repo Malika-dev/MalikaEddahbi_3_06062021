@@ -1,0 +1,121 @@
+a 
+{       text-decoration: none; 
+        color: inherit;    
+}
+/* couleur texte footer et "explorer"*/
+.font-color
+{ color: white;
+}
+
+.strong {
+    font-weight: bold;
+}
+/*header*/
+.logo-header img {
+    width: 160px;
+    height: 28px;
+}
+.logo-header {   
+   margin:auto;
+}
+
+
+h1 {
+    font-size: 32px;
+}
+
+.decouvrez {
+    font-size: 23px;
+}
+.presentation {
+    width: 100%;
+ 
+}
+.text-align {
+    text-align:center;
+}
+
+.explorer
+{   background-color: violet;
+    width: 215px;
+    height: 50px;
+    border-radius:  50px ;
+}
+
+/****/
+.input  
+{       border: none;
+        margin:auto;
+}
+
+::placeholder   
+{       color:black; 
+        opacity: 1;
+        background-color:lightgray;
+} 
+
+/*recherche input paris, belleville*/
+.recherche {       
+        display:flex; 
+        background-color:lightgray;
+        height: 50px;
+}
+
+/*********/
+
+.etape {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* cartes restaurants*/
+.mention {
+    background-color: #99e2d0;
+    color: #2c9c81;
+    width: 30%;
+    height: 30px;
+}
+
+
+
+.photo-accueil {
+    width: 100%;
+    height: 200px;
+   
+}
+
+.photo-accueil img {
+        border-radius: 18px 18px 0 0;
+        width:100%;
+        height:100%;
+        object-fit: cover; 
+}
+
+.carte-restaurant
+{       background-color: white;
+        box-shadow: 0px 0px 6px 0px grey;
+        border-radius: 18px;
+        width: 88%;
+        margin: auto;
+}
+
+.legende-carte {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*footer*/
+footer { 
+    background-color:lightblue;
+}
+.logo-footer img
+{   color: white;
+    width: 127px;
+    height: 20px;
+}
+
+li 
+{     list-style: none;
+}
