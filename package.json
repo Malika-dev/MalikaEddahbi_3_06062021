@@ -1,0 +1,22 @@
+{
+  "name": "malikaeddahbi_3_06062021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/scss:./css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Malika-dev/MalikaEddahbi_3_06062021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Malika-dev/MalikaEddahbi_3_06062021/issues"
+  },
+  "homepage": "https://github.com/Malika-dev/MalikaEddahbi_3_06062021#readme",
+  "dependencies": {
+    "sass": "^1.35.1"
+  }
+}
