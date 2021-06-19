@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <title>ohmyfood</title>
-    <!-- Google Fonts -->
+    <!--Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&amp;display=swap"
@@ -21,201 +21,217 @@
     ></script>
   </head>
   <body>
-    <!-- chargement -->
-    <div class="chargement">
-      <div class="bordure-chargement">
-        <div class="centre-chargement"></div>
+    <!-- chargement page -->
+    <div class="chargement-page">
+      <div class="chargement-page__bordure">
+        <div class="chargement-page__centre"></div>
       </div>
     </div>
 
     <header>
-      <div class="logo-header text-align">
-        <img src="images/logo/ohmyfood.png" alt="logo ohmyfood" />
+      <div class="header__logo text-align">
+        <img
+          class="header__logo__img"
+          src="images/logo/ohmyfood.png"
+          alt="logo ohmyfood"
+        />
       </div>
     </header>
 
     <main class="roboto">
       <section>
-        <div class="background-recherche-presentation">
-          <div class="recherche">
-            <div class="icon-map">
+        <div class="presentation">
+          <div class="presentation__recherche">
+            <div class="presentation__icon-map">
               <i class="fas fa-map-marker-alt map"></i>
             </div>
             <input
-              class="input fw-bold"
+              class="presentation__input text-align"
               type="text"
               placeholder="Paris, Belleville"
             />
           </div>
 
-          <div class="presentation">
-            <h1 class="text-align strong">
+          <div>
+            <h1 class="text-align font-weight">
               Réservez le menu qui vous convient
             </h1>
-            <p class="text-align decouvrez">
+            <p class="sous-titre-h1 text-align">
               Découvrez des restaurants d'exception, sélectionnés par nos soins.
             </p>
-            <div class="explorer text-align font-color">
+            <div class="bouton-explorer text-align font-color">
               <a href="#">Explorer nos restaurants</a>
             </div>
           </div>
         </div>
-        <h2 class="strong">Fonctionnement</h2>
+        <div class="fonctionnement">
+          <h2 class="font-weight">Fonctionnement</h2>
 
-        <div class="les-etapes">
-          <a href="#">
-            <div class="etape">
-              <span class="etape-nombre">1</span>
-              <div class="icon-etape icon-etape1">
-                <i class="fas fa-mobile-alt"></i>
+          <div class="les-etapes">
+            <a href="#">
+              <div class="etape">
+                <span class="etape__nombre text-align">1</span>
+                <div class="etape__icon etape__icon1">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <p class="etape__texte etape__texte1 text-align font-weight">
+                  Choisissez un restaurant
+                </p>
               </div>
-              <p class="texte-etape texte-etape1 text-align strong">
-                Choisissez un restaurant
-              </p>
-            </div>
-          </a>
-          <a href="#">
-            <div class="etape">
-              <span class="etape-nombre">2</span>
-              <div class="icon-etape icon-etape2">
-                <i class="fas fa-list-ul"></i>
+            </a>
+            <a href="#">
+              <div class="etape">
+                <span class="etape__nombre text-align">2</span>
+                <div class="etape__icon etape__icon2">
+                  <i class="fas fa-list-ul"></i>
+                </div>
+                <p class="etape__texte etape__texte2 text-align font-weight">
+                  Composez votre menu
+                </p>
               </div>
-              <p class="texte-etape texte-etape2 text-align strong">
-                Composez votre menu
-              </p>
-            </div>
-          </a>
-          <a href="#">
-            <div class="etape">
-              <span class="etape-nombre">3</span>
-              <div class="icon-etape icon-etape3">
-                <i class="fas fa-store"></i>
+            </a>
+            <a href="#">
+              <div class="etape">
+                <span class="etape__nombre text-align">3</span>
+                <div class="etape__icon etape__icon3">
+                  <i class="fas fa-store"></i>
+                </div>
+                <p class="etape__texte etape__texte3 text-align font-weight">
+                  Dégustez au restaurant
+                </p>
               </div>
-              <p class="texte-etape texte-etape3 text-align strong">
-                Dégustez au restaurant
-              </p>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </section>
 
       <section class="les-restaurants">
-        <h2 class="strong">Restaurants</h2>
-        <div class="les-menus">
-          <a class="hover-transition" href="menu-la-palette-du-gout.html">
-            <div class="carte-restaurant la-palette-du-gout">
-              <div class="photo-accueil nouveau-restaurant">
-                <p class="mention strong text-align">Nouveau</p>
+        <h2 class="font-weight">Restaurants</h2>
+        <!-- div pour css grid area desktop-->
+        <div class="les-restaurants__liste">
+          <a href="menu-la-palette-du-gout.html">
+            <div class="carte la-palette-du-gout">
+              <div class="carte__photo">
+                <p class="carte__mention-nouveau font-weight text-align">
+                  Nouveau
+                </p>
                 <img
+                  class="carte__photo__img"
                   src="images/restaurants/la-palette-du-gout.jpg"
                   alt="Restaurant La palette du goût"
                 />
               </div>
-              <div class="legende-carte">
-                <div class="nom-et-lieu">
-                  <h3 class="strong">La palette du goût</h3>
-                  <p class="lieu">Ménilmontant</p>
+              <div class="carte__legende">
+                <div class="carte__nom-et-lieu">
+                  <h3 class="carte__nom font-weight">La palette du goût</h3>
+                  <p class="carte__lieu">Ménilmontant</p>
                 </div>
-                <div class="coeur">
-                  <i class="far fa-heart empty"></i>
-                  <i class="fas fa-heart full"></i>
+                <div class="carte__coeur">
+                  <i class="far fa-heart coeur__blanc"></i>
+                  <i class="fas fa-heart coeur__couleur"></i>
                 </div>
               </div>
             </div>
           </a>
 
-          <a class="hover-transition" href="menu-la-note-enchantee.html">
-            <div class="carte-restaurant la-note-enchantee">
-              <div class="photo-accueil nouveau-restaurant">
-                <p class="mention strong text-align">Nouveau</p>
+          <a href="menu-la-note-enchantee.html">
+            <div class="carte la-note-enchantee">
+              <div class="carte__photo">
+                <p class="carte__mention-nouveau font-weight text-align">
+                  Nouveau
+                </p>
                 <img
+                  class="carte__photo__img"
                   src="images/restaurants/la-note-enchantee.jpg"
                   alt="Restaurant La note enchantée"
                 />
               </div>
-              <div class="legende-carte">
-                <div class="nom-et-lieu">
-                  <h3 class="strong">La note enchantée</h3>
-                  <p class="lieu">Charonne</p>
+              <div class="carte__legende">
+                <div class="carte__nom-et-lieu">
+                  <h3 class="carte__nom font-weight">La note enchantée</h3>
+                  <p class="carte__lieu">Charonne</p>
                 </div>
-                <div class="coeur">
-                  <i class="far fa-heart empty"></i>
-                  <i class="fas fa-heart full"></i>
+                <div class="carte__coeur">
+                  <i class="far fa-heart coeur__blanc"></i>
+                  <i class="fas fa-heart coeur__couleur"></i>
                 </div>
               </div>
             </div>
           </a>
 
-          <a class="hover-transition" href="menu-a-la-francaise.html">
-            <div class="carte-restaurant a-la-francaise">
-              <div class="photo-accueil">
+          <a href="menu-a-la-francaise.html">
+            <div class="carte a-la-francaise">
+              <div class="carte__photo">
                 <img
+                  class="carte__photo__img"
                   src="images/restaurants/a-la-francaise.jpg"
                   alt="Restaurant À la française"
                 />
               </div>
-              <div class="legende-carte">
-                <div class="nom-et-lieu">
-                  <h3 class="strong">À la française</h3>
-                  <p class="lieu">Cité Rouge</p>
+              <div class="carte__legende">
+                <div class="carte__nom-et-lieu">
+                  <h3 class="carte__nom font-weight">À la française</h3>
+                  <p class="carte__lieu">Cité Rouge</p>
                 </div>
-                <div class="coeur">
-                  <i class="far fa-heart empty"></i>
-                  <i class="fas fa-heart full"></i>
+                <div class="carte__coeur">
+                  <i class="far fa-heart coeur__blanc"></i>
+                  <i class="fas fa-heart coeur__couleur"></i>
                 </div>
               </div>
             </div>
           </a>
 
-          <a class="hover-transition" href="menu-le-delice-des-sens.html">
-            <div class="carte-restaurant le-delice-des-sens">
-              <div class="photo-accueil">
+          <a href="menu-le-delice-des-sens.html">
+            <div class="carte le-delice-des-sens">
+              <div class="carte__photo">
                 <img
+                  class="carte__photo__img"
                   src="images/restaurants/le-delice-des-sens.jpg"
                   alt="Restaurant Le délice des sens"
                 />
               </div>
-              <div class="legende-carte">
-                <div class="nom-et-lieu">
-                  <h3 class="strong">Le délice des sens</h3>
-                  <p class="lieu">Folie-Méricourt</p>
+              <div class="carte__legende">
+                <div class="carte__nom-et-lieu">
+                  <h3 class="carte__nom font-weight">Le délice des sens</h3>
+                  <p class="carte__lieu">Folie-Méricourt</p>
                 </div>
-                <div class="coeur">
-                  <i class="far fa-heart empty"></i>
-                  <i class="fas fa-heart full"></i>
+                <div class="carte__coeur">
+                  <i class="far fa-heart coeur__blanc"></i>
+                  <i class="fas fa-heart coeur__couleur"></i>
                 </div>
               </div>
             </div>
           </a>
         </div>
+        <!-- fin div pour css grid area desktop-->
       </section>
     </main>
 
-    <footer class="roboto">
-      <div class="logo-footer">
+    <footer class="footer roboto">
+      <div class="footer__logo">
         <img src="images/logo/ohmyfood.png" alt="logo ohmyfood" />
       </div>
-      <ul class="font-color">
-        <li>
+      <ul class="footer__list font-color">
+        <li class="footer__list__li">
           <a href="#"
             ><i class="fas fa-utensils"></i>
-            <span class="text-footer text-footer1"
+            <span class="footer__texte footer__texte1"
               >Proposer un restaurant
             </span>
           </a>
         </li>
-        <li>
+        <li class="footer__list__li">
           <a href="#"
             ><i class="fas fa-hands-helping"></i>
-            <span class="text-footer text-footer2">Devenir partenaire</span>
+            <span class="footer__texte footer__texte2">Devenir partenaire</span>
           </a>
         </li>
-        <li>
-          <a href="#"> <span class="text-footer">Mentions légales </span></a>
+        <li class="footer__list__li">
+          <a href="#"> <span class="footer__texte">Mentions légales </span></a>
         </li>
-        <li>
+        <li class="footer__list__li">
           <a href="mailto:contact@ohmyfood.com"
-            ><span class="text-footer">Contact</span></a
+            ><span class="footer__texte">Contact</span></a
           >
         </li>
       </ul>

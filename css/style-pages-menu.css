@@ -1,0 +1,238 @@
+@charset "UTF-8";
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+/*voir si attribuer cette class à d'autres éléments en plus de "commander*/
+.text-align {
+  text-align: center;
+}
+
+/******/
+.strong {
+  font-weight: bold;
+}
+
+/*********/
+h1 {
+  font-family: "Shrikhand";
+}
+
+:not(h1) {
+  font-family: "Roboto";
+}
+
+h2 {
+  font-weight: inherit;
+}
+
+/*header*/
+.header {
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/
+  margin-top: 28px;
+  margin-bottom: 17px;
+}
+.header__fleche {
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header__logo {
+  width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo__img {
+  width: 100%;
+  height: auto;
+}
+
+/*header photo*/
+.header__photo {
+  width: 100%;
+  height: 270px;
+  z-index: -1;
+}
+
+.photo__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/***************/
+/* coeur revoir animation*/
+.titre-et-coeur {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.titre-et-coeur__coeur:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: ease 0.4s;
+}
+
+.coeur__coeur-blanc {
+  font-size: 27px;
+  z-index: 0;
+  position: absolute;
+}
+
+.coeur__coeur-couleur {
+  color: violet;
+  font-size: 27px;
+  z-index: -1;
+  position: absolute;
+}
+
+/**********/
+.menu {
+  background-color: lightgray;
+  border-top-right-radius: 35px;
+  border-top-left-radius: 35px;
+  padding-bottom: 40px;
+  /*margin-top: -50px;*/
+  /*z-index: 999;*/
+}
+
+/********/
+.carte-menu {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px 0px grey;
+  /* box-shadow:5px 5px 15px 5px rgb(0 0 0 / 10%);*/
+  width: 93%;
+  height: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+.carte-menu:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: ease 0.4s;
+}
+.carte-menu__nom-plat {
+  margin-bottom: 0;
+  padding-top: 15px;
+}
+.carte-menu__attribut-plat-prix {
+  display: flex;
+  align-items: center;
+  /*justify-content: space-between;*/
+}
+.carte-menu__attribut-plat {
+  margin-top: 8px;
+}
+
+/* à revoir fonction texte caché avec animation
+.carte-menu__attribut-plat {
+  margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}*/
+.icon-cercle {
+  color: white;
+  font-size: 30px;
+  /* transform: rotate(180deg);
+  animation: icon-cercle 0.5s both;*/
+}
+
+.carte-menu__cercle-anime {
+  /* display: none;*/
+  background-color: #99e2d0;
+  border-radius: 0 15px 15px 0;
+  right: 0px;
+  bottom: 0px;
+  padding: 0 13px;
+  height: 100%;
+  position: absolute;
+}
+
+.carte-menu__cercle-anime:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: ease 0.4s;
+}
+
+/* couleur texte footer et "commander"*/
+.font-color {
+  color: white;
+}
+
+.commander {
+  background: linear-gradient(0deg, #9356dc, #ff79da);
+  width: 200px;
+  border-radius: 50px;
+  margin: 30px auto 60px auto;
+  padding: 17px;
+}
+.commander:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: ease 0.4s;
+}
+
+/*footer*/
+.footer {
+  background-color: black;
+}
+.footer__logo img {
+  width: 127px;
+  height: 20px;
+  filter: invert(100%);
+  margin: 40px 0 0 25px;
+}
+.footer__list {
+  padding: 0 0 35px 25px;
+  margin-top: 26px;
+}
+.footer__list__li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+.footer__texte1 {
+  margin-left: 16px;
+}
+.footer__texte2 {
+  margin-left: 10px;
+}
+.footer__texte:hover {
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+/*desktop*/
+@media all and (min-width: 992px) {
+  /*header*/
+  .header__fleche {
+    font-size: 30px;
+  }
+
+  .logo__img {
+    width: 400px;
+    height: auto;
+  }
+
+  /*footer*/
+  .footer {
+    text-align: center;
+  }
+  .footer__logo img {
+    width: 400px;
+    height: auto;
+  }
+}
+/*fin media queries desktop*/
+
+/*# sourceMappingURL=style-pages-menu.css.map */

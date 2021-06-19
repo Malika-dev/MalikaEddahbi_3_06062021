@@ -6,7 +6,20 @@ a {
 
 body {
   margin: 0;
-  background-color: pink;
+}
+
+.text-align {
+  text-align: center;
+}
+
+/* couleur texte footer et "bouton-explorer"*/
+.font-color {
+  color: white;
+}
+
+/*******/
+.font-weight {
+  font-weight: bold;
 }
 
 /*font*/
@@ -17,49 +30,46 @@ footer {
 
 /*création du loader*
 
-.chargement {   
+.chargement-page {   
     margin: auto;
     position: fixed;
     top: 0;left: 0;right: 0;bottom: 0;
    /* z-index: 20;*
   /*  -webkit-animation:spin 3s /*linear* infinite;*
-    animation: chargement 2s infinite ; /*linear*
+    animation: chargement-page 2s infinite ; /*linear*
   /*  visibility: hidden;*
 }
 
-.bordure-chargement {
-    border-left: 10px solid #9356dc;
-    border-right:10px solid #ff79da;
-    border-top: 10px solid #99e2d0;
-    border-bottom: 10px solid #99e2d0;
+.chargement-page__bordure {
+    border-left: 10px solid $color-primary;
+    border-right:10px solid $couleur-secondaire;
+    border-top: 10px solid $couleur-tertiaire;
+    border-bottom: 10px solid $couleur-tertiaire;
     border-radius: 50%;
     width: 100px;
     height: 100px;
     margin: auto;
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    animation: bordure-chargement 2s infinite ;/*linear*
+    animation: chargement-page__bordure 2s infinite ;/*linear*
    /* z-index: 10;
     visibility: hidden;*
 }
 
-.centre-chargement {
+.chargement-page__centre {
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background-color: #9356dc;
+    background: $color-primary;
     top: 0; left: 0; right: 0; bottom: 0;
     margin: auto;
     position: fixed;
 
 }
 
-
-
-
 /*animation du loader*
 
-@keyframes chargement {
+@keyframes chargement-page {
     0%  {
         transform: rotate(0deg);
     }
@@ -67,54 +77,44 @@ footer {
         transform: rotate(360deg);
     }
 }*/
-/* couleur texte footer et "explorer"*/
-.font-color {
-  color: white;
-}
-
-/*******/
-.strong {
-  font-weight: bold;
-}
-
 /*header*/
-.logo-header img {
+.header__logo {
+  box-shadow: inset 0 -7px 9px -7px grey;
+}
+.header__logo__img {
   width: 50%;
   height: auto;
   margin-top: 28px;
   margin-bottom: 17px;
 }
 
-.logo-header {
-  box-shadow: inset 0 -7px 9px -7px grey;
-}
-
-/*****/
-.icon-map {
-  font-size: 22px;
-}
-
-/****/
-.input {
-  border: inherit;
-  font-size: 18px;
-}
-
-::placeholder {
-  color: black;
-  opacity: 1;
-  background-color: lightsteelblue;
-  text-align: center;
-}
-
 /*recherche input paris, belleville*/
-.recherche {
+.presentation {
+  background: lightgrey;
+  /*mettre ce gris $couleur-gris-global*/
+  padding-bottom: 50px;
+}
+.presentation__recherche {
   display: flex;
   justify-content: center;
-  background-color: lightsteelblue;
+  background: lightsteelblue;
+  /*mettre ce gris $couleur-champs-recherche*/
   width: 100%;
   padding-top: 18px;
   padding-bottom: 18px;
+}
+.presentation__icon-map {
+  font-size: 22px;
+}
+.presentation__input {
+  border: inherit;
+  font-size: 18px;
+  background: lightsteelblue;
+  /*mettre ce gris $couleur-champs-recherche*/
+}
+.presentation__input::placeholder {
+  color: black;
+  opacity: 1;
 }
 
 /********/
@@ -124,22 +124,13 @@ h1 {
   margin-right: auto;
 }
 
-.decouvrez {
+.sous-titre-h1 {
   font-size: 20px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.background-recherche-presentation {
-  background-color: lightgrey;
-  padding-bottom: 50px;
-}
-
-.text-align {
-  text-align: center;
-}
-
-.explorer {
+.bouton-explorer {
   background: linear-gradient(0deg, #9356dc, #ff79da);
   width: 200px;
   border-radius: 50px;
@@ -147,8 +138,7 @@ h1 {
   padding: 17px;
   /* rajouter box shadow*/
 }
-
-.explorer:hover {
+.bouton-explorer:hover {
   cursor: pointer;
   transform: scale(1.03);
   transition: ease 0.4s;
@@ -161,89 +151,81 @@ h2 {
 /*fonctionnement*/
 .etape {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  background-color: lightblue;
+  justify-content: space-around;
+  background: lightgrey;
+  /*mettre ce gris $couleur-gris-global*/
   border-radius: 25px;
   margin-bottom: 16px;
   width: 320px;
   height: 65px;
-  /* width: 100%;*/
   margin-left: auto;
   margin-right: auto;
-  /* position: relative;*/
 }
-
-.etape-nombre {
-  display: block;
-  color: white;
-  background-color: #9356dc;
-  border-radius: 100%;
-  font-size: 14px;
-  width: 25px;
-  height: 25px;
-  text-align: center;
-  /*padding: 7px 11px;*/
-  /* position: absolute;
-   /* left: 16px;
-    top: 19px;*/
-}
-
 .etape:hover {
   cursor: pointer;
   transform: scale(1.03);
   transition: ease 0.4s;
-  /* voir avec transition duration*/
-  transition-duration: 0.25s;
-  color: gray;
-  background: white;
 }
-
-.etape:hover .icon-etape {
-  cursor: pointer;
-  color: grey;
-  transition-duration: 0.25s;
+.etape__nombre {
+  display: block;
+  color: white;
+  background: #9356dc;
+  border-radius: 100%;
+  font-size: 14px;
+  width: 25px;
+  height: 25px;
 }
-
-.etape:hover .etape-nombre {
-  cursor: pointer;
-  transition-duration: 0.25s;
-  background: lightblue;
+.etape__icon1 {
+  font-size: 24px;
   color: grey;
 }
-
-.texte-etape {
-  font-size: 17px;
-}
-
-.icon-etape2,
-.icon-etape3 {
+.etape__icon2 {
+  color: grey;
   font-size: 20px;
 }
-
-.icon-etape1 {
-  font-size: 24px;
-}
-
-.icon-etape1,
-.icon-etape2 {
-  color: grey;
-}
-
-.icon-etape3 {
+.etape__icon3 {
   color: #9356dc;
+  font-size: 20px;
+}
+.etape__texte {
+  font-size: 17px;
 }
 
 /* cartes restaurants*/
 .les-restaurants {
-  background-color: lightgray;
+  background: lightgrey;
+  /*mettre ce gris $couleur-gris-global*/
   padding-top: 40px;
   padding-bottom: 40px;
   margin-top: 50px;
 }
 
-.mention {
-  background-color: #99e2d0;
+.carte {
+  background: white;
+  box-shadow: 0px 0px 6px 0px grey;
+  border-radius: 20px;
+  width: 88%;
+  margin: 20px auto;
+}
+.carte:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: ease 0.4s;
+}
+.carte__photo {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+.carte__photo__img {
+  border-radius: 18px 18px 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carte__mention-nouveau {
+  background: #99e2d0;
   color: #2c9c81;
   width: 100px;
   height: 25px;
@@ -252,136 +234,100 @@ h2 {
   right: 10px;
   padding-top: 8px;
 }
-
-.photo-accueil {
-  width: 100%;
-  height: 200px;
-  position: relative;
-}
-
-.photo-accueil img {
-  border-radius: 18px 18px 0 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.carte-restaurant {
-  background-color: white;
-  box-shadow: 0px 0px 6px 0px grey;
-  border-radius: 20px;
-  width: 88%;
-  margin: 20px auto;
-}
-
-.carte-restaurant:hover {
-  cursor: pointer;
-  transform: scale(1.03);
-  transition: ease 1s;
-}
-
-.legende-carte {
+.carte__legende {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  position: relative;
+  justify-content: space-around;
 }
-
-/*coeur tout à revoir*/
-.coeur {
+.carte__nom-et-lieu {
+  margin-right: 40px;
+}
+.carte__nom {
+  margin-bottom: 7px;
+  margin-top: 14px;
+}
+.carte__lieu {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+.carte__coeur {
   font-size: 30px;
-  /* stroke-width: 10;
-    stroke: black;
-    fill: white;
+  margin: 0 20px 30px 0;
+  /*stroke-width: 10; appliquer avec svg
+  /* stroke: black;*/
+  /* fill: white;
     cursor: pointer;*/
 }
 
-.empty {
+/*coeur revoir animation*/
+.coeur__blanc {
   z-index: 0;
   position: absolute;
 }
 
-.full {
+.coeur__couleur {
   color: violet;
   /* color: transparent;
-    background: linear-gradient(to right, #9356dc, #ff79da);
+    background: linear-gradient(to right, $color-primary, $couleur-secondaire);
     -webkit-background-clip: text;*/
   z-index: -1;
   position: absolute;
 }
 
-.etape:hover {
-  cursor: pointer;
-  transform: scale(1.03);
-  transition: ease 0.4s;
-}
-
-/*******/
-.nom-et-lieu {
-  margin-right: 40px;
-}
-
-.lieu {
-  margin-top: 0;
-  margin-bottom: 14px;
-}
-
-h3 {
-  margin-bottom: 7px;
-  margin-top: 14px;
-}
-
 /*footer*/
-footer {
-  background-color: black;
+.footer {
+  background: black;
 }
-
-.logo-footer img {
+.footer__logo img {
   width: 127px;
   height: 20px;
   filter: invert(100%);
   margin: 40px 0 0 25px;
 }
-
-ul {
+.footer__list {
   padding: 0 0 35px 25px;
   margin-top: 26px;
 }
-
-li {
+.footer__list__li {
   list-style: none;
   margin-bottom: 15px;
 }
-
-.text-footer1 {
+.footer__texte1 {
   margin-left: 16px;
 }
-
-.text-footer2 {
+.footer__texte2 {
   margin-left: 10px;
 }
-
-.text-footer:hover {
+.footer__texte:hover {
   cursor: pointer;
   text-decoration-line: underline;
 }
 
 /*desktop*/
 @media all and (min-width: 992px) {
+  /*header*/
+  .header__logo img {
+    width: 400px;
+  }
+
+  /**************/
+  .fonctionnement {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+  }
+
   .les-etapes {
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .carte-restaurant {
-    background-color: white;
-    box-shadow: 0px 0px 6px 0px grey;
-    border-radius: 18px;
+  .carte {
     width: 80%;
-    margin: 20px auto;
   }
 
-  .les-menus {
+  .les-restaurants__liste {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -404,17 +350,11 @@ li {
     grid-area: le-delice-des-sens;
   }
 
-  /*header*/
-  .logo-header img {
-    width: 400px;
-  }
-
   /*footer*/
-  footer {
+  .footer {
     text-align: center;
   }
-
-  .logo-footer img {
+  .footer__logo img {
     width: 400px;
     height: auto;
   }
