@@ -188,20 +188,14 @@ h2 {
     width: 25px;
     height: 25px;
   }
-  &__icon1 {
-    font-size: 24px;
-    color: grey;
-  }
-  &__icon2 {
-    color: grey;
+  &__icon {
     font-size: 20px;
+    color: grey;
+    &--icon3 {
+      color: $couleur-primaire;
+      font-size: 20px;
+    }
   }
-
-  &__icon3 {
-    color: $couleur-primaire;
-    font-size: 20px;
-  }
-
   &__texte {
     font-size: 17px;
   }

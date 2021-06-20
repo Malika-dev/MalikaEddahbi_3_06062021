@@ -176,15 +176,11 @@ h2 {
   width: 25px;
   height: 25px;
 }
-.etape__icon1 {
-  font-size: 24px;
-  color: grey;
-}
-.etape__icon2 {
-  color: grey;
+.etape__icon {
   font-size: 20px;
+  color: grey;
 }
-.etape__icon3 {
+.etape__icon--icon3 {
   color: #9356dc;
   font-size: 20px;
 }
