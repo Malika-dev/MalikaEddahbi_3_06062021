@@ -1,7 +1,7 @@
 @mixin survol-bouton {
   cursor: pointer;
   transform: scale(1.03);
-  transition: ease 0.4s;
+  transition: ease 0.2s;
 }
 
 @mixin display-flex-and-align-center {
@@ -95,18 +95,14 @@ h1 {
 .coeur__coeur-blanc {
   font-size: 27px;
   z-index: 0;
-  position: absolute;
-  bottom: 25px;
-  right: 30px;
+  position: fixed;
 }
 
 .coeur__coeur-couleur {
   color: violet;
   font-size: 27px;
   z-index: -1;
-  position: absolute;
-  bottom: 25px;
-  right: 30px;
+  position: fixed;
 }
 
 /**********/

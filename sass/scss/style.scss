@@ -10,7 +10,7 @@
 @mixin survol-bouton {
   cursor: pointer;
   transform: scale(1.03);
-  transition: ease 0.4s;
+  transition: 0.2s;
 }
 
 $couleur-primaire: #9356dc;
@@ -46,54 +46,69 @@ footer {
   font-family: "Roboto";
 }
 
-/*création du loader*
+/*loader*
 
-.chargement-page {   
-    margin: auto;
-    position: fixed;
-    top: 0;left: 0;right: 0;bottom: 0;
-   /* z-index: 20;*
-  /*  -webkit-animation:spin 3s /*linear* infinite;*
-    animation: chargement-page 2s infinite ; /*linear*
-  /*  visibility: hidden;*
+
+.chargement {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  opacity: 0;
+  transition: opacity 3s ease-out;
+}
+.lettre {
+  color: $couleur-primaire;
+  font-weight: bolder;
+  font-size: 80px;
+  font-family: "Shrikhand";
+  letter-spacing: 10px;
+  animation: chargement 1.2s linear infinite;
 }
 
-.chargement-page__bordure {
-    border-left: 10px solid $color-primary;
-    border-right:10px solid $couleur-secondaire;
-    border-top: 10px solid $couleur-tertiaire;
-    border-bottom: 10px solid $couleur-tertiaire;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    margin: auto;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    animation: chargement-page__bordure 2s infinite ;/*linear*
-   /* z-index: 10;
-    visibility: hidden;*
+@keyframes chargement {
+  0% {
+    color: $couleur-secondaire;
+    text-shadow: 0 0 2px $couleur-tertiaire;
+  }
+
+  90% {
+    color: $couleur-primaire;
+    text-shadow: none;
+  }
+  100% {
+    color: $couleur-secondaire;
+    text-shadow: 0 0 2px $couleur-tertiaire;
+  }
 }
 
-.chargement-page__centre {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: $color-primary;
-    top: 0; left: 0; right: 0; bottom: 0;
-    margin: auto;
-    position: fixed;
-
+.lettre:nth-child(1) {
+  animation-delay: 0.1s;
 }
-    
-/*animation du loader*
-
-@keyframes chargement-page {
-    0%  {
-        transform: rotate(0deg);
-    }
-    100%    {
-        transform: rotate(360deg);
-    }
+.lettre:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.lettre:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.lettre:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.lettre:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.lettre:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.lettre:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.lettre:nth-child(8) {
+  animation-delay: 0.8s;
 }*/
 
 /*header*/

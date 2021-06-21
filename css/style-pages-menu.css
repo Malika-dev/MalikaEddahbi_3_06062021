@@ -79,24 +79,20 @@ h1 {
 .titre-et-coeur__coeur:hover {
   cursor: pointer;
   transform: scale(1.03);
-  transition: ease 0.4s;
+  transition: ease 0.2s;
 }
 
 .coeur__coeur-blanc {
   font-size: 27px;
   z-index: 0;
-  position: absolute;
-  bottom: 25px;
-  right: 30px;
+  position: fixed;
 }
 
 .coeur__coeur-couleur {
   color: violet;
   font-size: 27px;
   z-index: -1;
-  position: absolute;
-  bottom: 25px;
-  right: 30px;
+  position: fixed;
 }
 
 /**********/
@@ -124,7 +120,7 @@ h1 {
 .carte-menu:hover {
   cursor: pointer;
   transform: scale(1.03);
-  transition: ease 0.4s;
+  transition: ease 0.2s;
 }
 .carte-menu__nom-plat {
   margin-bottom: 0;
@@ -166,7 +162,7 @@ h1 {
 .carte-menu__cercle-anime:hover {
   cursor: pointer;
   transform: scale(1.03);
-  transition: ease 0.4s;
+  transition: ease 0.2s;
 }
 
 /* couleur texte footer et "commander"*/
@@ -184,7 +180,7 @@ h1 {
 .commander:hover {
   cursor: pointer;
   transform: scale(1.03);
-  transition: ease 0.4s;
+  transition: ease 0.2s;
 }
 
 /*footer*/
