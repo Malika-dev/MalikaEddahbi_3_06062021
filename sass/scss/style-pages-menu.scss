@@ -133,17 +133,17 @@ h1 {
     @include survol-bouton;
   }
 
-  &__nom-plat {
+  /* &__nom-plat {
     margin-bottom: 0;
     padding-top: 15px;
   }
   &__attribut-plat-prix {
     @include display-flex-and-align-center;
-    /*justify-content: space-between;*/
+    /*justify-content: space-between;*
   }
   &__attribut-plat {
     margin-top: 8px;
-  }
+  }*/
 }
 
 /* à revoir fonction texte caché avec animation
@@ -153,7 +153,7 @@ h1 {
   overflow: hidden;
 }*/
 
-.carte-menu__cercle-anime {
+/*.carte-menu__cercle-anime {
   color: white;
   font-size: 30px;
   background-color: $couleur-tertiaire;
@@ -163,7 +163,7 @@ h1 {
   padding: 0 13px;
   height: 100%;
   position: absolute;
-}
+}*/
 
 /*apparition carte menu*/
 

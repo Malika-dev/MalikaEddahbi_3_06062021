@@ -116,23 +116,22 @@ h1 {
   margin-right: auto;
   margin-left: auto;
   position: relative;
+  /* &__nom-plat {
+    margin-bottom: 0;
+    padding-top: 15px;
+  }
+  &__attribut-plat-prix {
+    @include display-flex-and-align-center;
+    /*justify-content: space-between;*
+  }
+  &__attribut-plat {
+    margin-top: 8px;
+  }*/
 }
 .carte-menu:hover {
   cursor: pointer;
   transform: scale(1.03);
   transition: ease 0.2s;
-}
-.carte-menu__nom-plat {
-  margin-bottom: 0;
-  padding-top: 15px;
-}
-.carte-menu__attribut-plat-prix {
-  display: flex;
-  align-items: center;
-  /*justify-content: space-between;*/
-}
-.carte-menu__attribut-plat {
-  margin-top: 8px;
 }
 
 /* à revoir fonction texte caché avec animation
@@ -141,18 +140,17 @@ h1 {
   text-overflow: ellipsis;
   overflow: hidden;
 }*/
-.carte-menu__cercle-anime {
+/*.carte-menu__cercle-anime {
   color: white;
   font-size: 30px;
-  background-color: #99e2d0;
+  background-color: $couleur-tertiaire;
   border-radius: 0 15px 15px 0;
   right: 0px;
   bottom: 0px;
   padding: 0 13px;
   height: 100%;
   position: absolute;
-}
-
+}*/
 /*apparition carte menu*/
 .carte-menu {
   animation: apparition 1s ease-out;
