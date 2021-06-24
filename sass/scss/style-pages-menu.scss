@@ -112,7 +112,7 @@ h1 {
 
 .carte-menu {
   @include display-flex-align-items-center;
-  @include margin-left-right-auto;
+  @include left-right-auto;
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;

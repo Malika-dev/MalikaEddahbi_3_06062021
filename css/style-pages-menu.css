@@ -1,17 +1,251 @@
-/* Error: Undefined mixin.
- *     ,
- * 115 |   @include margin-left-right-auto;
- *     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *     '
- *   sass\scss\style-pages-menu.scss 115:3  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a     \2577 \a 115 \2502    @include margin-left-right-auto;\d\a     \2502    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a     \2575 \a   sass\\scss\\style-pages-menu.scss 115:3  root stylesheet";
+@charset "UTF-8";
+/*******************************/
+a {
+  text-decoration: none;
+  color: inherit;
 }
+
+body {
+  margin: 0;
+}
+
+/*voir si attribuer cette class à d'autres éléments en plus de "commander*/
+.text-align {
+  text-align: center;
+}
+
+/******/
+.strong {
+  font-weight: bold;
+}
+
+/*********/
+:not(h1) {
+  font-family: "Roboto";
+}
+
+h2 {
+  font-weight: inherit;
+  margin-left: 20px;
+}
+
+/*header*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+  margin-bottom: 17px;
+}
+.header__fleche {
+  font-size: 24px;
+  transform: translateX(-300%);
+  /*à revoir*/
+}
+.header__logo {
+  width: 50%;
+  height: auto;
+}
+
+.logo__img {
+  width: 100%;
+  height: auto;
+}
+
+/*header photo*/
+.header__photo {
+  width: 100%;
+  height: 270px;
+  position: relative;
+  z-index: -1;
+  /*binome avec position, obligatoirement*/
+}
+
+.photo__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/***************/
+/* coeur revoir animation*/
+h1 {
+  font-family: "Shrikhand";
+  font-size: 30px;
+  margin-left: 20px;
+}
+
+.titre-et-coeur {
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+  position: relative;
+}
+.titre-et-coeur__coeur:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+.coeur__coeur-blanc {
+  font-size: 27px;
+  z-index: 0;
+  position: absolute;
+}
+
+.coeur__coeur-couleur {
+  color: violet;
+  font-size: 27px;
+  z-index: -1;
+  position: absolute;
+}
+
+/**********/
+.menu {
+  background-color: lightgray;
+  border-top-right-radius: 35px;
+  border-top-left-radius: 35px;
+  padding-bottom: 40px;
+  margin-top: -35px;
+}
+
+/********/
+.carte-menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px 0px grey;
+  /* box-shadow:5px 5px 15px 5px rgb(0 0 0 / 10%);*/
+  width: 93%;
+  height: 70px;
+  position: relative;
+  animation: apparition 1s ease-out;
+}
+.carte-menu:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+@keyframes apparition {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.carte-menu:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.carte-menu:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.carte-menu:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.carte-menu:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.carte-menu:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.carte-menu:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.carte-menu:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.carte-menu:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.carte-menu:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.bouton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: linear-gradient(0deg, #9356dc, #ff79da);
+  width: 200px;
+  border-radius: 50px;
+  margin: 30px auto 0 auto;
+  padding: 17px;
+  /* rajouter box shadow dans mixin*/
+}
+.bouton:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+/*footer*/
+.footer {
+  background-color: black;
+  color: white;
+}
+.footer__logo img {
+  width: 127px;
+  height: 20px;
+  filter: invert(100%);
+  margin: 40px 0 0 25px;
+}
+.footer__list {
+  padding: 0 0 35px 25px;
+  margin-top: 26px;
+}
+.footer__list__li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+.footer__texte1 {
+  margin-left: 16px;
+}
+.footer__texte2 {
+  margin-left: 10px;
+}
+.footer__texte:hover {
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+/*desktop*/
+@media all and (min-width: 992px) {
+  /*header*/
+  .header__fleche {
+    font-size: 30px;
+  }
+
+  .logo__img {
+    width: 400px;
+    height: auto;
+  }
+
+  /*footer*/
+  .footer {
+    text-align: center;
+  }
+  .footer__logo img {
+    width: 400px;
+    height: auto;
+  }
+}
+/*fin media queries desktop*/
+
+/*# sourceMappingURL=style-pages-menu.css.map */
