@@ -1,23 +1,6 @@
-@mixin display-flex-align-items-center {
-  display: flex;
-  align-items: center;
-}
-
-@mixin left-right-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-@mixin survol-bouton {
-  cursor: pointer;
-  transform: scale(1.03);
-  transition: 0.2s;
-}
-
-$couleur-primaire: #9356dc;
-$couleur-secondaire: #ff79da;
-$couleur-tertiaire: #99e2d0;
-$couleur-gris-global: #f6f6f6;
-$couleur-champs-recherche: #e6e6e6;
+@import "./_variables";
+@import "./_mixins";
+@import "./_placeholders";
 
 a {
   text-decoration: none;
@@ -31,10 +14,7 @@ body {
 .text-align {
   text-align: center;
 }
-/* couleur texte footer et "bouton-explorer"*/
-.font-color {
-  color: white;
-}
+
 /*******/
 .font-weight {
   font-weight: bold;
@@ -46,7 +26,7 @@ footer {
   font-family: "Roboto";
 }
 
-/*loader à créer*/
+/*création du loader*/
 
 /*header*/
 
@@ -99,13 +79,8 @@ h1 {
   @include left-right-auto;
 }
 
-.bouton-explorer {
-  background: linear-gradient(0deg, $couleur-primaire, $couleur-secondaire);
-  width: 200px;
-  border-radius: 50px;
-  margin: 30px auto 0 auto;
-  padding: 17px;
-  /* rajouter box shadow*/
+.bouton {
+  @include bouton;
   &:hover {
     @include survol-bouton;
   }
@@ -119,7 +94,7 @@ h2 {
 
 .etape {
   @include display-flex-align-items-center;
-  justify-content: space-around;
+
   background: lightgrey; /*mettre ce gris $couleur-gris-global*/
   border-radius: 25px;
   margin-bottom: 16px;
@@ -132,20 +107,26 @@ h2 {
   }
 
   &__nombre {
-    display: block;
+    display: flex;
     color: white;
+    justify-content: center;
+    align-items: center;
     background: $couleur-primaire;
     border-radius: 100%;
     font-size: 14px;
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
+    transform: translateX(-45%);
+    margin-right: 16px;
   }
   &__icon {
     font-size: 20px;
     color: grey;
+    margin-right: 20px;
     &--icon3 {
       color: $couleur-primaire;
       font-size: 20px;
+      margin-right: 20px;
     }
   }
   &__texte {
@@ -210,11 +191,6 @@ h2 {
   &__coeur {
     font-size: 30px;
     margin: 0 20px 30px 0;
-
-    /*stroke-width: 10; appliquer avec svg
-    /* stroke: black;*/
-    /* fill: white;
-      cursor: pointer;*/
   }
 }
 
@@ -236,6 +212,7 @@ h2 {
 /*footer*/
 .footer {
   background: black;
+  color: white;
   &__logo img {
     width: 127px;
     height: 20px;

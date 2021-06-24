@@ -12,11 +12,6 @@ body {
   text-align: center;
 }
 
-/* couleur texte footer et "bouton-explorer"*/
-.font-color {
-  color: white;
-}
-
 /*******/
 .font-weight {
   font-weight: bold;
@@ -28,7 +23,7 @@ footer {
   font-family: "Roboto";
 }
 
-/*loader à créer*/
+/*création du loader*/
 /*header*/
 .header__logo {
   box-shadow: inset 0 -7px 9px -7px grey;
@@ -82,15 +77,18 @@ h1 {
   margin-right: auto;
 }
 
-.bouton-explorer {
+.bouton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
   background: linear-gradient(0deg, #9356dc, #ff79da);
   width: 200px;
   border-radius: 50px;
   margin: 30px auto 0 auto;
   padding: 17px;
-  /* rajouter box shadow*/
 }
-.bouton-explorer:hover {
+.bouton:hover {
   cursor: pointer;
   transform: scale(1.03);
   transition: 0.2s;
@@ -104,7 +102,6 @@ h2 {
 .etape {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   background: lightgrey;
   /*mettre ce gris $couleur-gris-global*/
   border-radius: 25px;
@@ -120,21 +117,27 @@ h2 {
   transition: 0.2s;
 }
 .etape__nombre {
-  display: block;
+  display: flex;
   color: white;
+  justify-content: center;
+  align-items: center;
   background: #9356dc;
   border-radius: 100%;
   font-size: 14px;
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
+  transform: translateX(-45%);
+  margin-right: 16px;
 }
 .etape__icon {
   font-size: 20px;
   color: grey;
+  margin-right: 20px;
 }
 .etape__icon--icon3 {
   color: #9356dc;
   font-size: 20px;
+  margin-right: 20px;
 }
 .etape__texte {
   font-size: 17px;
@@ -201,10 +204,6 @@ h2 {
 .carte__coeur {
   font-size: 30px;
   margin: 0 20px 30px 0;
-  /*stroke-width: 10; appliquer avec svg
-  /* stroke: black;*/
-  /* fill: white;
-    cursor: pointer;*/
 }
 
 /*coeur revoir animation*/
@@ -225,6 +224,7 @@ h2 {
 /*footer*/
 .footer {
   background: black;
+  color: white;
 }
 .footer__logo img {
   width: 127px;

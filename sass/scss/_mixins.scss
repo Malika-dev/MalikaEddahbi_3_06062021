@@ -1,0 +1,26 @@
+@mixin display-flex-align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin left-right-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin survol-bouton {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+@mixin bouton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: linear-gradient(0deg, $couleur-primaire, $couleur-secondaire);
+  width: 200px;
+  border-radius: 50px;
+  margin: 30px auto 0 auto;
+  padding: 17px;
+}
