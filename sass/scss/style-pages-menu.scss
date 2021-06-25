@@ -1,6 +1,7 @@
 @import "./_variables";
 @import "./_mixins";
 @import "./_placeholders";
+@import "_media";
 
 /*******************************/
 a {
@@ -12,10 +13,6 @@ body {
   margin: 0;
 }
 
-/*voir si attribuer cette class à d'autres éléments en plus de "commander*/
-.text-align {
-  text-align: center;
-}
 /******/
 .strong {
   font-weight: bold;
@@ -34,8 +31,8 @@ h2 {
 
 /*header*/
 
-.header {
-  @include display-flex-align-items-center;
+.header-restaurant {
+  @extend %display-flex-align-items-center;
   justify-content: center;
   margin-top: 28px;
   margin-bottom: 17px;
@@ -44,27 +41,25 @@ h2 {
     transform: translateX(-300%); /*à revoir*/
   }
   &__logo {
-    width: 50%;
-    height: auto;
+    @include width-height(50%, auto);
   }
 }
 
 .logo__img {
-  width: 100%;
-  height: auto;
+  @include width-height(100%, auto);
 }
 
 /*header photo*/
-.header__photo {
-  width: 100%;
-  height: 270px;
+.header-restaurant__photo {
+  @include width-height(100%, 270px);
+
   position: relative;
   z-index: -1; /*binome avec position, obligatoirement*/
 }
 
 .photo__img {
-  width: 100%;
-  height: 100%;
+  @include width-height(100%, 100%);
+
   object-fit: cover;
 }
 /***************/
@@ -76,12 +71,12 @@ h1 {
 }
 
 .titre-et-coeur {
-  @include display-flex-align-items-center;
+  @extend %display-flex-align-items-center;
   padding-top: 30px;
   position: relative;
 
   &__coeur:hover {
-    @include survol-bouton;
+    @extend %survol-bouton;
   }
 }
 
@@ -111,20 +106,20 @@ h1 {
 /********/
 
 .carte-menu {
-  @include display-flex-align-items-center;
-  @include left-right-auto;
+  @extend %display-flex-align-items-center;
+  @extend %left-right-auto;
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 0px 15px 0px grey;
   /* box-shadow:5px 5px 15px 5px rgb(0 0 0 / 10%);*/
-  width: 93%;
-  height: 70px;
+  @include width-height(93%, 70px);
+
   position: relative;
   animation: apparition 1s ease-out;
 
   &:hover {
-    @include survol-bouton;
+    @extend %survol-bouton;
   }
 }
 
@@ -168,11 +163,11 @@ h1 {
   animation-delay: 0.9s;
 }
 
-.bouton {
-  @include bouton;
+.bouton-commander {
+  @include boutons;
   /* rajouter box shadow dans mixin*/
   &:hover {
-    @include survol-bouton;
+    @extend %survol-bouton;
   }
 }
 
@@ -181,8 +176,8 @@ h1 {
   background-color: black;
   color: white;
   &__logo img {
-    width: 127px;
-    height: 20px;
+    @include width-height(127px, 20px);
+
     filter: invert(100%);
     margin: 40px 0 0 25px;
   }
@@ -211,13 +206,35 @@ h1 {
 @media all and (min-width: 992px) {
   /*header*/
 
-  .header__fleche {
+  .header-restaurant__fleche {
     font-size: 30px;
   }
 
   .logo__img {
     width: 400px;
     height: auto;
+  }
+
+  /*carte menu*/
+  .carte-menu {
+    width: 25%;
+  }
+
+  .entrees-plats-dessert {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-areas: "entrees plats desserts";
+  }
+
+  .entrees {
+    grid-area: entrees;
+  }
+  .plats {
+    grid-area: plats;
+  }
+  .desserts {
+    grid-area: desserts;
   }
 
   /*footer*/

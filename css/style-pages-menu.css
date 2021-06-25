@@ -1,4 +1,22 @@
 @charset "UTF-8";
+/* à voir si cette mixin est utile*/
+/***********************/
+.carte-menu {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bouton-commander:hover, .carte-menu:hover, .titre-et-coeur__coeur:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.2s;
+}
+
+.carte-menu, .titre-et-coeur, .header-restaurant {
+  display: flex;
+  align-items: center;
+}
+
 /*******************************/
 a {
   text-decoration: none;
@@ -7,11 +25,6 @@ a {
 
 body {
   margin: 0;
-}
-
-/*voir si attribuer cette class à d'autres éléments en plus de "commander*/
-.text-align {
-  text-align: center;
 }
 
 /******/
@@ -30,19 +43,17 @@ h2 {
 }
 
 /*header*/
-.header {
-  display: flex;
-  align-items: center;
+.header-restaurant {
   justify-content: center;
   margin-top: 28px;
   margin-bottom: 17px;
 }
-.header__fleche {
+.header-restaurant__fleche {
   font-size: 24px;
   transform: translateX(-300%);
   /*à revoir*/
 }
-.header__logo {
+.header-restaurant__logo {
   width: 50%;
   height: auto;
 }
@@ -53,7 +64,7 @@ h2 {
 }
 
 /*header photo*/
-.header__photo {
+.header-restaurant__photo {
   width: 100%;
   height: 270px;
   position: relative;
@@ -76,17 +87,9 @@ h1 {
 }
 
 .titre-et-coeur {
-  display: flex;
-  align-items: center;
   padding-top: 30px;
   position: relative;
 }
-.titre-et-coeur__coeur:hover {
-  cursor: pointer;
-  transform: scale(1.03);
-  transition: 0.2s;
-}
-
 .coeur__coeur-blanc {
   font-size: 27px;
   z-index: 0;
@@ -111,10 +114,6 @@ h1 {
 
 /********/
 .carte-menu {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
@@ -125,12 +124,6 @@ h1 {
   position: relative;
   animation: apparition 1s ease-out;
 }
-.carte-menu:hover {
-  cursor: pointer;
-  transform: scale(1.03);
-  transition: 0.2s;
-}
-
 @keyframes apparition {
   from {
     opacity: 0;
@@ -177,7 +170,7 @@ h1 {
   animation-delay: 0.9s;
 }
 
-.bouton {
+.bouton-commander {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,12 +182,6 @@ h1 {
   padding: 17px;
   /* rajouter box shadow dans mixin*/
 }
-.bouton:hover {
-  cursor: pointer;
-  transform: scale(1.03);
-  transition: 0.2s;
-}
-
 /*footer*/
 .footer {
   background-color: black;
@@ -228,13 +215,36 @@ h1 {
 /*desktop*/
 @media all and (min-width: 992px) {
   /*header*/
-  .header__fleche {
+  .header-restaurant__fleche {
     font-size: 30px;
   }
 
   .logo__img {
     width: 400px;
     height: auto;
+  }
+
+  /*carte menu*/
+  .carte-menu {
+    width: 25%;
+  }
+
+  .entrees-plats-dessert {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "entrees plats desserts";
+  }
+
+  .entrees {
+    grid-area: entrees;
+  }
+
+  .plats {
+    grid-area: plats;
+  }
+
+  .desserts {
+    grid-area: desserts;
   }
 
   /*footer*/
