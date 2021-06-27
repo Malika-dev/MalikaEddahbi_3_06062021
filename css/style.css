@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* à voir si cette mixin est utile*/
 /***********************/
-.etape, .sous-titre-h1, h1 {
+.etape {
   margin-left: auto;
   margin-right: auto;
 }
@@ -17,6 +17,14 @@
   align-items: center;
 }
 
+.carte__mention-nouveau, .sous-titre-h1, h1, .presentation__input, .header-accueil__logo {
+  text-align: center;
+}
+
+.carte__mention-nouveau, .etape__texte {
+  font-weight: bold;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -26,22 +34,75 @@ body {
   margin: 0;
 }
 
-.text-align {
-  text-align: center;
-}
-
 /*******/
-.font-weight {
-  font-weight: bold;
-}
-
 /*font*/
 main,
 footer {
   font-family: "Roboto";
 }
 
-/*création du loader*/
+/*création du loader
+.chargement {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  opacity: 0;
+  transition: opacity 3s ease-out;
+}
+.lettre {
+  color: $couleur-primaire;
+  font-weight: bolder;
+  font-size: 80px;
+  font-family: "Shrikhand";
+  letter-spacing: 10px;
+  animation: chargement 3s linear infinite;
+}
+
+@keyframes chargement {
+  0% {
+    color: $couleur-secondaire;
+    text-shadow: 0 0 1px $couleur-tertiaire;
+  }
+
+  90% {
+    color: $couleur-primaire;
+    text-shadow: none;
+  }
+  100% {
+    color: $couleur-secondaire;
+    text-shadow: 0 0 2px $couleur-tertiaire;
+  }
+}
+
+.lettre:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.lettre:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.lettre:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.lettre:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.lettre:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.lettre:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.lettre:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.lettre:nth-child(8) {
+  animation-delay: 0.8s;
+}*/
 /*header*/
 .header-accueil__logo {
   box-shadow: inset 0 -7px 9px -7px grey;
@@ -68,11 +129,11 @@ footer {
   padding-bottom: 18px;
 }
 .presentation__icon-map {
-  font-size: 22px;
+  font-size: 18px;
 }
 .presentation__input {
   border: inherit;
-  font-size: 18px;
+  font-size: 16px;
   background: lightsteelblue;
   /*mettre ce gris $couleur-champs-recherche*/
 }
@@ -98,11 +159,12 @@ h1 {
   background: linear-gradient(0deg, #9356dc, #ff79da);
   width: 200px;
   border-radius: 50px;
-  margin: 30px auto 0 auto;
+  margin: 40px auto 0 auto;
   padding: 17px;
 }
 h2 {
-  margin-left: 15px;
+  margin-left: 25px;
+  font-size: 28px;
 }
 
 /*fonctionnement*/
@@ -178,6 +240,7 @@ h2 {
 }
 .carte__legende {
   justify-content: space-around;
+  position: relative;
 }
 .carte__nom-et-lieu {
   margin-right: 40px;
@@ -190,12 +253,14 @@ h2 {
   margin-top: 0;
   margin-bottom: 14px;
 }
-.carte__coeur {
-  font-size: 30px;
-  margin: 0 20px 30px 0;
-}
 
 /*coeur revoir animation*/
+.carte__coeur {
+  font-size: 30px;
+  margin-right: 25px;
+  margin-bottom: 30px;
+}
+
 .coeur__blanc {
   z-index: 0;
   position: absolute;
@@ -203,10 +268,12 @@ h2 {
 
 .coeur__couleur {
   color: violet;
+  /* background: linear-gradient(to right, $color-primary, $couleur-secondaire);*/
   z-index: -1;
   position: absolute;
 }
 
+/*******/
 /*footer*/
 .footer {
   background: black;
@@ -236,60 +303,5 @@ h2 {
   cursor: pointer;
   text-decoration-line: underline;
 }
-
-/*desktop*/
-@media all and (min-width: 992px) {
-  .header-accueil__logo img {
-    width: 400px;
-  }
-
-  .fonctionnement {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-  }
-
-  .les-etapes {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .carte {
-    width: 80%;
-  }
-
-  .les-restaurants__liste {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: "la-palette-du-gout la-note-enchantee" "a-la-francaise le-delice-des-sens";
-  }
-
-  .la-palette-du-gout {
-    grid-area: la-palette-du-gout;
-  }
-
-  .la-note-enchantee {
-    grid-area: la-note-enchantee;
-  }
-
-  .a-la-francaise {
-    grid-area: a-la-francaise;
-  }
-
-  .le-delice-des-sens {
-    grid-area: le-delice-des-sens;
-  }
-
-  .footer {
-    text-align: center;
-  }
-  .footer__logo img {
-    width: 400px;
-    height: auto;
-  }
-}
-/* fin media queries 992px*/
 
 /*# sourceMappingURL=style.css.map */

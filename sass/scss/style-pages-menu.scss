@@ -1,32 +1,23 @@
 @import "./_variables";
 @import "./_mixins";
 @import "./_placeholders";
-@import "_media";
 
 /*******************************/
+
 a {
   text-decoration: none;
   color: inherit;
 }
-
 body {
   margin: 0;
 }
 
-/******/
-.strong {
-  font-weight: bold;
+* {
+  box-sizing: border-box;
 }
-
-/*********/
 
 :not(h1) {
   font-family: "Roboto";
-}
-
-h2 {
-  font-weight: inherit;
-  margin-left: 20px;
 }
 
 /*header*/
@@ -37,11 +28,11 @@ h2 {
   margin-top: 28px;
   margin-bottom: 17px;
   &__fleche {
-    font-size: 24px;
+    font-size: 20px;
     transform: translateX(-300%); /*à revoir*/
   }
   &__logo {
-    @include width-height(50%, auto);
+    @include width-height(45%, auto);
   }
 }
 
@@ -52,26 +43,26 @@ h2 {
 /*header photo*/
 .header-restaurant__photo {
   @include width-height(100%, 270px);
-
   position: relative;
   z-index: -1; /*binome avec position, obligatoirement*/
 }
 
 .photo__img {
   @include width-height(100%, 100%);
-
   object-fit: cover;
 }
 /***************/
 /* coeur revoir animation*/
 h1 {
   font-family: "Shrikhand";
-  font-size: 30px;
-  margin-left: 20px;
+  font-size: 25px;
+  margin-bottom: 0;
+  margin-left: -20px;
 }
 
 .titre-et-coeur {
   @extend %display-flex-align-items-center;
+  justify-content: space-around;
   padding-top: 30px;
   position: relative;
 
@@ -79,18 +70,21 @@ h1 {
     @extend %survol-bouton;
   }
 }
-
 .coeur__coeur-blanc {
-  font-size: 27px;
+  font-size: 23px;
   z-index: 0;
   position: absolute;
+  /* bottom: 23px;
+  right: 35px;* les marges viennent perturber la position*/
 }
 
 .coeur__coeur-couleur {
   color: violet;
-  font-size: 27px;
+  font-size: 23px;
   z-index: -1;
   position: absolute;
+  /* bottom: 23px;
+  right: 35px;* les marges viennent perturber la position*/
 }
 
 /**********/
@@ -104,26 +98,36 @@ h1 {
 }
 
 /********/
+h2 {
+  font-weight: inherit;
+  font-size: 17px;
+  margin-left: 20px;
+  margin-top: 30px;
+  border-bottom: 3px solid $couleur-tertiaire;
+  width: 45px;
+  padding-bottom: 8px;
+}
 
 .carte-menu {
+  @include width-height(93%, 70px);
   @extend %display-flex-align-items-center;
+  justify-content: space-between;
   @extend %left-right-auto;
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 0px 15px 0px grey;
   /* box-shadow:5px 5px 15px 5px rgb(0 0 0 / 10%);*/
-  @include width-height(93%, 70px);
-
   position: relative;
-  animation: apparition 1s ease-out;
-
-  &:hover {
+  animation: apparition-menu 1s ease-out; /* apparition sur la page*/
+  /*&:hover {
     @extend %survol-bouton;
-  }
+  }*/
+  cursor: pointer;
+  overflow: hidden;
 }
 
-@keyframes apparition {
+@keyframes apparition-menu {
   from {
     opacity: 0;
     transform: translateY(100px);
@@ -163,6 +167,96 @@ h1 {
   animation-delay: 0.9s;
 }
 
+/* texte carte*/
+h3 {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+p {
+  margin-top: 5px;
+  font-size: 15px;
+  /*  white-space: nowrap; à revoir coupe le bloc vert
+  overflow: hidden;
+  text-overflow: ellipsis;*/
+}
+
+.prix {
+  font-weight: bold;
+  font-size: 15px;
+}
+.carte-menu__nom-plat-et-description-plat {
+  margin-left: 10px;
+}
+
+/*apparition boite icon*/
+
+/* boite-icon*/
+.carte-menu_boite-icon {
+  min-width: 65px;
+  height: 100%;
+  /*position: absolute;
+  right: 0;*/
+  border-radius: 0 15px 15px 0;
+  background: $couleur-tertiaire;
+  position: relative;
+  transition: margin-left 1s ease-in-out;
+}
+.carte-menu_boite-icon:hover {
+  width: 130px;
+}
+/*.carte-menu_boite-icon {
+  animation: animation-boite-icon 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    reverse;
+}
+
+@keyframes animation-boite-icon {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}
+@keyframes animation-boite-icon {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100px);
+  }
+}*/
+
+/******************************/
+/* animation cercle icon revoir bordure blanche*/
+.icon-cercle {
+  font-size: 25px;
+  color: $couleur-tertiaire;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 33%;
+  left: 33%;
+}
+
+.icon-cercle {
+  animation: animation-cercle 2s both;
+}
+
+@keyframes animation-cercle {
+  0% {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: center;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/***************************/
 .bouton-commander {
   @include boutons;
   /* rajouter box shadow dans mixin*/
@@ -200,50 +294,3 @@ h1 {
     text-decoration-line: underline;
   }
 }
-
-/*desktop*/
-
-@media all and (min-width: 992px) {
-  /*header*/
-
-  .header-restaurant__fleche {
-    font-size: 30px;
-  }
-
-  .logo__img {
-    width: 400px;
-    height: auto;
-  }
-
-  /*carte menu*/
-  .carte-menu {
-    width: 25%;
-  }
-
-  .entrees-plats-dessert {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-    grid-template-areas: "entrees plats desserts";
-  }
-
-  .entrees {
-    grid-area: entrees;
-  }
-  .plats {
-    grid-area: plats;
-  }
-  .desserts {
-    grid-area: desserts;
-  }
-
-  /*footer*/
-  .footer {
-    text-align: center;
-
-    &__logo img {
-      width: 400px;
-      height: auto;
-    }
-  }
-} /*fin media queries desktop*/

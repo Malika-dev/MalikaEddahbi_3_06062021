@@ -1,7 +1,6 @@
 @import "./_variables";
 @import "./_mixins";
 @import "./_placeholders";
-@import "_media";
 
 a {
   text-decoration: none;
@@ -12,14 +11,7 @@ body {
   margin: 0;
 }
 
-.text-align {
-  text-align: center;
-}
-
 /*******/
-.font-weight {
-  font-weight: bold;
-}
 
 /*font*/
 main,
@@ -27,12 +19,74 @@ footer {
   font-family: "Roboto";
 }
 
-/*création du loader*/
+/*création du loader
+.chargement {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+  opacity: 0;
+  transition: opacity 3s ease-out;
+}
+.lettre {
+  color: $couleur-primaire;
+  font-weight: bolder;
+  font-size: 80px;
+  font-family: "Shrikhand";
+  letter-spacing: 10px;
+  animation: chargement 3s linear infinite;
+}
+
+@keyframes chargement {
+  0% {
+    color: $couleur-secondaire;
+    text-shadow: 0 0 1px $couleur-tertiaire;
+  }
+
+  90% {
+    color: $couleur-primaire;
+    text-shadow: none;
+  }
+  100% {
+    color: $couleur-secondaire;
+    text-shadow: 0 0 2px $couleur-tertiaire;
+  }
+}
+
+.lettre:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.lettre:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.lettre:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.lettre:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.lettre:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.lettre:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.lettre:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.lettre:nth-child(8) {
+  animation-delay: 0.8s;
+}*/
 
 /*header*/
 
 .header-accueil__logo {
   box-shadow: inset 0 -7px 9px -7px grey;
+  @extend %text-align-center;
   &__img {
     width: 50%;
     height: auto;
@@ -55,12 +109,13 @@ footer {
     padding-bottom: 18px;
   }
   &__icon-map {
-    font-size: 22px;
+    font-size: 18px;
   }
   &__input {
     border: inherit;
-    font-size: 18px;
+    font-size: 16px;
     background: lightsteelblue; /*mettre ce gris $couleur-champs-recherche*/
+    @extend %text-align-center;
     &::placeholder {
       color: black;
       opacity: 1;
@@ -72,12 +127,12 @@ footer {
 
 h1 {
   font-size: 32px;
-  @extend %left-right-auto;
+  @extend %text-align-center;
 }
 
 .sous-titre-h1 {
   font-size: 20px;
-  @extend %left-right-auto;
+  @extend %text-align-center;
 }
 
 .bouton-explorer {
@@ -88,24 +143,23 @@ h1 {
 }
 
 h2 {
-  margin-left: 15px;
+  margin-left: 25px;
+  font-size: 28px;
 }
 
 /*fonctionnement*/
 
 .etape {
   @extend %display-flex-align-items-center;
-
   background: lightgrey; /*mettre ce gris $couleur-gris-global*/
   border-radius: 25px;
   margin-bottom: 16px;
   @include width-height(320px, 65px);
-
   @extend %left-right-auto;
+
   &:hover {
     @extend %survol-bouton;
   }
-
   &__nombre {
     @extend %display-flex-align-items-center;
     justify-content: center;
@@ -114,7 +168,6 @@ h2 {
     border-radius: 100%;
     font-size: 14px;
     @include width-height(28px, 28px);
-
     transform: translateX(-45%);
     margin-right: 16px;
   }
@@ -130,6 +183,7 @@ h2 {
   }
   &__texte {
     font-size: 17px;
+    @extend %font-weight-bold;
   }
 }
 
@@ -159,14 +213,14 @@ h2 {
   &__photo__img {
     border-radius: 18px 18px 0 0;
     @include width-height(100%, 100%);
-
     object-fit: cover;
   }
   &__mention-nouveau {
     background: $couleur-tertiaire;
+    @extend %text-align-center;
+    @extend %font-weight-bold;
     color: #2c9c81;
     @include width-height(100px, 25px);
-
     position: absolute;
     top: 0;
     right: 10px;
@@ -175,6 +229,7 @@ h2 {
   &__legende {
     @extend %display-flex-align-items-center;
     justify-content: space-around;
+    position: relative;
   }
   &__nom-et-lieu {
     margin-right: 40px;
@@ -187,13 +242,15 @@ h2 {
     margin-top: 0;
     margin-bottom: 14px;
   }
-  &__coeur {
-    font-size: 30px;
-    margin: 0 20px 30px 0;
-  }
 }
 
 /*coeur revoir animation*/
+
+.carte__coeur {
+  font-size: 30px;
+  margin-right: 25px;
+  margin-bottom: 30px;
+}
 
 .coeur__blanc {
   z-index: 0;
@@ -201,10 +258,11 @@ h2 {
 }
 .coeur__couleur {
   color: violet;
-
+  /* background: linear-gradient(to right, $color-primary, $couleur-secondaire);*/
   z-index: -1;
   position: absolute;
 }
+/*******/
 
 /*footer*/
 .footer {
@@ -212,7 +270,6 @@ h2 {
   color: white;
   &__logo img {
     @include width-height(127px, 20px);
-
     filter: invert(100%);
     margin: 40px 0 0 25px;
   }
@@ -235,55 +292,3 @@ h2 {
     text-decoration-line: underline;
   }
 }
-/*desktop*/
-@media all and (min-width: 992px) {
-  .header-accueil__logo img {
-    width: 400px;
-  }
-
-  .fonctionnement {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-  }
-
-  .les-etapes {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .carte {
-    width: 80%;
-  }
-
-  .les-restaurants__liste {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-      "la-palette-du-gout la-note-enchantee"
-      "a-la-francaise le-delice-des-sens";
-  }
-
-  .la-palette-du-gout {
-    grid-area: la-palette-du-gout;
-  }
-  .la-note-enchantee {
-    grid-area: la-note-enchantee;
-  }
-  .a-la-francaise {
-    grid-area: a-la-francaise;
-  }
-  .le-delice-des-sens {
-    grid-area: le-delice-des-sens;
-  }
-
-  .footer {
-    text-align: center;
-    &__logo img {
-      width: 400px;
-      height: auto;
-    }
-  }
-} /* fin media queries 992px*/
