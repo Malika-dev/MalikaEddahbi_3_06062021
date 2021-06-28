@@ -51,7 +51,7 @@ body {
   @include width-height(100%, 100%);
   object-fit: cover;
 }
-/***************/
+/**************/
 /* coeur revoir animation*/
 h1 {
   font-family: "Shrikhand";
@@ -95,18 +95,18 @@ h1 {
   border-top-left-radius: 35px;
   padding-bottom: 40px;
   margin-top: -35px;
+  & h2 {
+    font-weight: inherit;
+    font-size: 17px;
+    margin-left: 20px;
+    margin-top: 30px;
+    border-bottom: 3px solid $couleur-tertiaire;
+    width: 45px;
+    padding-bottom: 8px;
+  }
 }
 
 /********/
-h2 {
-  font-weight: inherit;
-  font-size: 17px;
-  margin-left: 20px;
-  margin-top: 30px;
-  border-bottom: 3px solid $couleur-tertiaire;
-  width: 45px;
-  padding-bottom: 8px;
-}
 
 .carte-menu {
   @include width-height(93%, 70px);
@@ -120,10 +120,10 @@ h2 {
   /* box-shadow:5px 5px 15px 5px rgb(0 0 0 / 10%);*/
   position: relative;
   animation: apparition-menu 1s ease-out; /* apparition sur la page*/
-  /*&:hover {
+
+  &:hover {
     @extend %survol-bouton;
-  }*/
-  cursor: pointer;
+  }
   overflow: hidden;
 }
 
@@ -200,50 +200,41 @@ p {
   border-radius: 0 15px 15px 0;
   background: $couleur-tertiaire;
   position: relative;
-  transition: margin-left 1s ease-in-out;
-}
-.carte-menu_boite-icon:hover {
-  width: 130px;
-}
-/*.carte-menu_boite-icon {
-  animation: animation-boite-icon 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    reverse;
+  right: 0;
+
+  &:hover {
+    @extend %survol-bouton;
+    animation: animation-boite-icon-check 2s ease-out;
+  }
 }
 
-@keyframes animation-boite-icon {
+/*@keyframes animation-boite-icon-check {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100px);
-  }
-}
-@keyframes animation-boite-icon {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100px);
+    transform: translateX(500px);
   }
 }*/
 
 /******************************/
-/* animation cercle icon revoir bordure blanche*/
-.icon-cercle {
-  font-size: 25px;
+/* animation cercle icon-check*/
+.icon-check {
+  font-size: 18px;
   color: $couleur-tertiaire;
   background: white;
   border-radius: 50%;
+  padding: 5px;
   position: absolute;
   top: 33%;
   left: 33%;
+  &:hover {
+    @extend %survol-bouton;
+    animation: animation-check 2s both;
+  }
 }
 
-.icon-cercle {
-  animation: animation-cercle 2s both;
-}
-
-@keyframes animation-cercle {
+@keyframes animation-check {
   0% {
     transform-origin: center;
     transform: rotate3d(0, 0, 1, -200deg);

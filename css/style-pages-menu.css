@@ -6,7 +6,7 @@
   margin-right: auto;
 }
 
-.bouton-commander:hover, .titre-et-coeur__coeur:hover {
+.bouton-commander:hover, .icon-check:hover, .carte-menu_boite-icon:hover, .carte-menu:hover, .titre-et-coeur__coeur:hover {
   cursor: pointer;
   transform: scale(1.03);
   transition: 0.2s;
@@ -71,7 +71,7 @@ body {
   object-fit: cover;
 }
 
-/***************/
+/**************/
 /* coeur revoir animation*/
 h1 {
   font-family: "Shrikhand";
@@ -110,9 +110,7 @@ h1 {
   padding-bottom: 40px;
   margin-top: -35px;
 }
-
-/********/
-h2 {
+.menu h2 {
   font-weight: inherit;
   font-size: 17px;
   margin-left: 20px;
@@ -122,6 +120,7 @@ h2 {
   padding-bottom: 8px;
 }
 
+/********/
 .carte-menu {
   width: 93%;
   height: 70px;
@@ -134,13 +133,8 @@ h2 {
   position: relative;
   animation: apparition-menu 1s ease-out;
   /* apparition sur la page*/
-  /*&:hover {
-    @extend %survol-bouton;
-  }*/
-  cursor: pointer;
   overflow: hidden;
 }
-
 @keyframes apparition-menu {
   from {
     opacity: 0;
@@ -221,51 +215,37 @@ p {
   border-radius: 0 15px 15px 0;
   background: #99e2d0;
   position: relative;
-  transition: margin-left 1s ease-in-out;
+  right: 0;
 }
-
 .carte-menu_boite-icon:hover {
-  width: 130px;
+  animation: animation-boite-icon-check 2s ease-out;
 }
 
-/*.carte-menu_boite-icon {
-  animation: animation-boite-icon 1s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    reverse;
-}
-
-@keyframes animation-boite-icon {
+/*@keyframes animation-boite-icon-check {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100px);
-  }
-}
-@keyframes animation-boite-icon {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100px);
+    transform: translateX(500px);
   }
 }*/
 /******************************/
-/* animation cercle icon revoir bordure blanche*/
-.icon-cercle {
-  font-size: 25px;
+/* animation cercle icon-check*/
+.icon-check {
+  font-size: 18px;
   color: #99e2d0;
   background: white;
   border-radius: 50%;
+  padding: 5px;
   position: absolute;
   top: 33%;
   left: 33%;
 }
-
-.icon-cercle {
-  animation: animation-cercle 2s both;
+.icon-check:hover {
+  animation: animation-check 2s both;
 }
 
-@keyframes animation-cercle {
+@keyframes animation-check {
   0% {
     transform-origin: center;
     transform: rotate3d(0, 0, 1, -200deg);
