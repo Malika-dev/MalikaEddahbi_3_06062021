@@ -6,7 +6,7 @@
   margin-right: auto;
 }
 
-.bouton-commander:hover, .icon-check:hover, .carte-menu_boite-icon:hover, .carte-menu:hover, .titre-et-coeur__coeur:hover {
+.bouton-commander:hover, .carte-menu:hover, .titre-et-coeur__coeur:hover {
   cursor: pointer;
   transform: scale(1.03);
   transition: 0.2s;
@@ -17,6 +17,29 @@
   align-items: center;
 }
 
+/*@mixin mobile-paysage {
+  @media all and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablette {
+  @media all and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-992px {
+  @media all and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin desktop-1440px {
+  @media all and (min-width: 1440px) {
+    @content;
+  }
+}*/
 /*******************************/
 a {
   text-decoration: none;
@@ -123,7 +146,6 @@ h1 {
 /********/
 .carte-menu {
   width: 93%;
-  height: 70px;
   justify-content: space-between;
   margin-bottom: 15px;
   background-color: white;
@@ -135,6 +157,24 @@ h1 {
   /* apparition sur la page*/
   overflow: hidden;
 }
+.carte-menu__description-plat {
+  margin-top: 0px;
+  margin-bottom: 0;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.carte-menu:hover .carte-menu_boite-icon {
+  width: 65px;
+}
+.carte-menu:hover .carte-menu_boite-icon .icon-check {
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: all ease-in-out 0.4s;
+  transition-delay: 0;
+  opacity: 1;
+}
+
 @keyframes apparition-menu {
   from {
     opacity: 0;
@@ -183,17 +223,17 @@ h1 {
 
 /* texte carte*/
 h3 {
-  margin-top: 18px;
+  margin-top: 0;
   margin-bottom: 0;
   font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-p {
-  margin-top: 5px;
-  font-size: 15px;
-  /*  white-space: nowrap; à revoir coupe le bloc vert
-  overflow: hidden;
-  text-overflow: ellipsis;*/
+.carte-menu_prix-plat {
+  padding: 10px;
+  align-self: flex-end;
 }
 
 .prix {
@@ -202,33 +242,23 @@ p {
 }
 
 .carte-menu__nom-plat-et-description-plat {
-  margin-left: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*apparition boite icon*/
 /* boite-icon*/
 .carte-menu_boite-icon {
-  min-width: 65px;
-  height: 100%;
-  /*position: absolute;
-  right: 0;*/
-  border-radius: 0 15px 15px 0;
+  width: 0;
   background: #99e2d0;
   position: relative;
-  right: 0;
-}
-.carte-menu_boite-icon:hover {
-  animation: animation-boite-icon-check 2s ease-out;
+  overflow: hidden;
+  align-self: stretch;
+  transition: width ease-in-out 0.4s;
 }
 
-/*@keyframes animation-boite-icon-check {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(500px);
-  }
-}*/
 /******************************/
 /* animation cercle icon-check*/
 .icon-check {
@@ -238,25 +268,15 @@ p {
   border-radius: 50%;
   padding: 5px;
   position: absolute;
-  top: 33%;
-  left: 33%;
-}
-.icon-check:hover {
-  animation: animation-check 2s both;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-180deg);
+  transition: all ease 0;
+  transition-delay: 0.4s;
+  transform-origin: center;
+  opacity: 0;
 }
 
-@keyframes animation-check {
-  0% {
-    transform-origin: center;
-    transform: rotate3d(0, 0, 1, -200deg);
-    opacity: 0;
-  }
-  100% {
-    transform-origin: center;
-    transform: none;
-    opacity: 1;
-  }
-}
 /***************************/
 .bouton-commander {
   display: flex;

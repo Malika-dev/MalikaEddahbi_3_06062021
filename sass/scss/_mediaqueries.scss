@@ -1,0 +1,51 @@
+/*@mixin mobile-paysage {
+  @media all and (min-width: 576px) {
+    @content;
+  }
+}
+
+@mixin tablette {
+  @media all and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-992px {
+  @media all and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin desktop-1440px {
+  @media all and (min-width: 1440px) {
+    @content;
+  }
+}*/
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == mobile-paysage {
+    @media all and (min-width: 576px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablette {
+    @media all and (min-width: 768px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-min-992px {
+    @media all and (min-width: 992px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-min-1200px {
+    @media all and (min-width: 1200px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-min-1440px {
+    @media all and (min-width: 1440px) {
+      @content;
+    }
+  }
+}

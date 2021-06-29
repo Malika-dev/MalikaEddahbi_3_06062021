@@ -1,6 +1,7 @@
 @import "./_variables";
 @import "./_mixins";
 @import "./_placeholders";
+@import "./mediaqueries";
 
 /*******************************/
 
@@ -109,7 +110,7 @@ h1 {
 /********/
 
 .carte-menu {
-  @include width-height(93%, 70px);
+  width: 93%;
   @extend %display-flex-align-items-center;
   justify-content: space-between;
   @extend %left-right-auto;
@@ -120,10 +121,28 @@ h1 {
   /* box-shadow:5px 5px 15px 5px rgb(0 0 0 / 10%);*/
   position: relative;
   animation: apparition-menu 1s ease-out; /* apparition sur la page*/
+  &__description-plat {
+    margin-top: 0px;
+    margin-bottom: 0;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   &:hover {
     @extend %survol-bouton;
+    .carte-menu_boite-icon {
+      width: 65px;
+      .icon-check {
+        transform: translate(-50%, -50%) rotate(0deg);
+        transition: all ease-in-out 0.4s;
+        transition-delay: 0;
+        opacity: 1;
+      }
+    }
   }
+
   overflow: hidden;
 }
 
@@ -169,53 +188,41 @@ h1 {
 
 /* texte carte*/
 h3 {
-  margin-top: 18px;
+  margin-top: 0;
   margin-bottom: 0;
   font-size: 15px;
-}
-p {
-  margin-top: 5px;
-  font-size: 15px;
-  /*  white-space: nowrap; à revoir coupe le bloc vert
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;*/
+  text-overflow: ellipsis;
 }
 
+.carte-menu_prix-plat {
+  padding: 10px;
+  align-self: flex-end;
+}
 .prix {
   font-weight: bold;
   font-size: 15px;
 }
 .carte-menu__nom-plat-et-description-plat {
-  margin-left: 10px;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*apparition boite icon*/
 
 /* boite-icon*/
 .carte-menu_boite-icon {
-  min-width: 65px;
-  height: 100%;
-  /*position: absolute;
-  right: 0;*/
-  border-radius: 0 15px 15px 0;
+  width: 0;
+
   background: $couleur-tertiaire;
   position: relative;
-  right: 0;
-
-  &:hover {
-    @extend %survol-bouton;
-    animation: animation-boite-icon-check 2s ease-out;
-  }
+  overflow: hidden;
+  align-self: stretch;
+  transition: width ease-in-out 0.4s;
 }
-
-/*@keyframes animation-boite-icon-check {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(500px);
-  }
-}*/
 
 /******************************/
 /* animation cercle icon-check*/
@@ -226,25 +233,14 @@ p {
   border-radius: 50%;
   padding: 5px;
   position: absolute;
-  top: 33%;
-  left: 33%;
-  &:hover {
-    @extend %survol-bouton;
-    animation: animation-check 2s both;
-  }
-}
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-180deg);
+  transition: all ease 0;
+  transition-delay: 0.4s;
+  transform-origin: center;
 
-@keyframes animation-check {
-  0% {
-    transform-origin: center;
-    transform: rotate3d(0, 0, 1, -200deg);
-    opacity: 0;
-  }
-  100% {
-    transform-origin: center;
-    transform: none;
-    opacity: 1;
-  }
+  opacity: 0;
 }
 
 /***************************/

@@ -1,6 +1,7 @@
 @import "./_variables";
 @import "./_mixins";
 @import "./_placeholders";
+@import "./mediaqueries";
 
 a {
   text-decoration: none;
@@ -104,6 +105,9 @@ footer {
     height: auto;
     margin-top: 28px;
     margin-bottom: 17px;
+    @include responsive(mobile-paysage) {
+      width: 300px;
+    }
   }
 }
 
@@ -199,6 +203,15 @@ h2 {
   }
 }
 
+.les-etapes {
+  @include responsive(mobile-paysage) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
 /* cartes restaurants*/
 
 .les-restaurants {
@@ -280,6 +293,9 @@ h2 {
 .footer {
   background: black;
   color: white;
+  @include responsive(mobile-paysage) {
+    text-align: center;
+  }
   &__logo img {
     @include width-height(127px, 20px);
     filter: invert(100%);
