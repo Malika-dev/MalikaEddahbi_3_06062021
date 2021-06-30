@@ -8,18 +8,15 @@
   border-radius: 50px;
   margin: 40px auto 0 auto;
   padding: 17px;
+  box-shadow: 0px 0px 6px 0px lightcoral;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: 0.2s;
+    box-shadow: 0px 0px 6px 0px blue;
+    background: linear-gradient(0deg, $couleur-primaire, $couleur-secondaire);
+  }
 }
-
-/* à voir si cette mixin est utile*/
-@mixin absolute-el($top, $right, $bottom, $left) {
-  position : absolute;
-  top : $top;
-  right: $right;
-  bottom: $bottom;
-  left: $left;
-}
-
-/***********************/
 
 @mixin width-height($width, $height) {
   width: $width;

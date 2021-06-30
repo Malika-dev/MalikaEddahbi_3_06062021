@@ -1,12 +1,4 @@
-@charset "UTF-8";
-/* à voir si cette mixin est utile*/
-/***********************/
-.etape {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.carte:hover, .etape:hover, .bouton-explorer:hover {
+.carte:hover, .etape:hover {
   cursor: pointer;
   transform: scale(1.03);
   transition: 0.2s;
@@ -17,37 +9,10 @@
   align-items: center;
 }
 
-.carte__mention-nouveau, .sous-titre-h1, h1, .presentation__input, .header-accueil__logo {
-  text-align: center;
-}
-
 .carte__mention-nouveau, .etape__texte {
   font-weight: bold;
 }
 
-/*@mixin mobile-paysage {
-  @media all and (min-width: 576px) {
-    @content;
-  }
-}
-
-@mixin tablette {
-  @media all and (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin desktop-992px {
-  @media all and (min-width: 992px) {
-    @content;
-  }
-}
-
-@mixin desktop-1440px {
-  @media all and (min-width: 1440px) {
-    @content;
-  }
-}*/
 a {
   text-decoration: none;
   color: inherit;
@@ -57,17 +22,14 @@ body {
   margin: 0;
 }
 
-/*******/
-/*font*/
 main,
 footer {
   font-family: "Roboto";
 }
 
-/*création du loader*/
-/*header*/
 .header-accueil__logo {
   box-shadow: inset 0 -7px 9px -7px grey;
+  text-align: center;
 }
 .header-accueil__logo__img {
   width: 50%;
@@ -81,16 +43,13 @@ footer {
   }
 }
 
-/*recherche input paris, belleville*/
 .presentation {
   background: lightgrey;
-  /*mettre ce gris $couleur-gris-global*/
   padding-bottom: 50px;
 }
 .presentation__recherche {
   justify-content: center;
-  background: lightsteelblue;
-  /*mettre ce gris $couleur-champs-recherche*/
+  background: #e6e6e6;
   width: 100%;
   padding-top: 18px;
   padding-bottom: 18px;
@@ -101,21 +60,22 @@ footer {
 .presentation__input {
   border: inherit;
   font-size: 16px;
-  background: lightsteelblue;
-  /*mettre ce gris $couleur-champs-recherche*/
+  background: #e6e6e6;
+  text-align: center;
 }
 .presentation__input::placeholder {
   color: black;
   opacity: 1;
 }
 
-/********/
 h1 {
   font-size: 32px;
+  text-align: center;
 }
 
 .sous-titre-h1 {
   font-size: 20px;
+  text-align: center;
 }
 
 .bouton-explorer {
@@ -128,20 +88,29 @@ h1 {
   border-radius: 50px;
   margin: 40px auto 0 auto;
   padding: 17px;
+  box-shadow: 0px 0px 6px 0px lightcoral;
 }
+.bouton-explorer:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.2s;
+  box-shadow: 0px 0px 6px 0px blue;
+  background: linear-gradient(0deg, #9356dc, #ff79da);
+}
+
 h2 {
   margin-left: 25px;
   font-size: 28px;
 }
 
-/*fonctionnement*/
 .etape {
   background: lightgrey;
-  /*mettre ce gris $couleur-gris-global*/
   border-radius: 25px;
   margin-bottom: 16px;
   width: 320px;
   height: 65px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .etape__nombre {
   justify-content: center;
@@ -168,19 +137,8 @@ h2 {
   font-size: 17px;
 }
 
-@media all and (min-width: 576px) {
-  .les-etapes {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-}
-
-/* cartes restaurants*/
 .les-restaurants {
   background: lightgrey;
-  /*mettre ce gris $couleur-gris-global*/
   padding-top: 40px;
   padding-bottom: 40px;
   margin-top: 50px;
@@ -206,6 +164,7 @@ h2 {
 }
 .carte__mention-nouveau {
   background: #99e2d0;
+  text-align: center;
   color: #2c9c81;
   width: 100px;
   height: 25px;
@@ -230,27 +189,57 @@ h2 {
   margin-bottom: 14px;
 }
 
-/*coeur revoir animation*/
 .carte__coeur {
-  font-size: 30px;
-  margin-right: 25px;
-  margin-bottom: 30px;
+  position: relative;
+}
+.carte__coeur:hover .coeur__blanc {
+  opacity: 0;
 }
 
 .coeur__blanc {
+  display: block;
+  width: 20px;
   z-index: 0;
-  position: absolute;
+  position: relative;
+  transition: all ease 0.5s;
+  opacity: 1;
+}
+.coeur__blanc path {
+  stroke-width: 20px;
+  stroke: black;
 }
 
 .coeur__couleur {
-  color: violet;
-  /* background: linear-gradient(to right, $color-primary, $couleur-secondaire);*/
   z-index: -1;
   position: absolute;
+  top: 0;
+  left: 0;
+}
+.coeur__couleur path {
+  fill: url(#gradient-coeur);
 }
 
-/*******/
-/*footer*/
+@media all and (min-width: 768px) {
+  .les-restaurants__liste {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "la-palette-du-gout la-note-enchantee" "a-la-francaise le-delice-des-sens";
+  }
+  .les-restaurants__liste .la-palette-du-gout {
+    grid-area: la-palette-du-gout;
+  }
+  .les-restaurants__liste .la-note-enchantee {
+    grid-area: la-note-enchantee;
+  }
+  .les-restaurants__liste .a-la-francaise {
+    grid-area: a-la-francaise;
+  }
+  .les-restaurants__liste .le-delice-des-sens {
+    grid-area: le-delice-des-sens;
+  }
+}
+
 .footer {
   background: black;
   color: white;

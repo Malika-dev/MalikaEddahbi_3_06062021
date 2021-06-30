@@ -1,12 +1,5 @@
 @charset "UTF-8";
-/* à voir si cette mixin est utile*/
-/***********************/
-.carte-menu {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.bouton-commander:hover, .carte-menu:hover, .titre-et-coeur__coeur:hover {
+.carte-menu:hover, .titre-et-coeur__coeur:hover {
   cursor: pointer;
   transform: scale(1.03);
   transition: 0.2s;
@@ -17,29 +10,6 @@
   align-items: center;
 }
 
-/*@mixin mobile-paysage {
-  @media all and (min-width: 576px) {
-    @content;
-  }
-}
-
-@mixin tablette {
-  @media all and (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin desktop-992px {
-  @media all and (min-width: 992px) {
-    @content;
-  }
-}
-
-@mixin desktop-1440px {
-  @media all and (min-width: 1440px) {
-    @content;
-  }
-}*/
 /*******************************/
 a {
   text-decoration: none;
@@ -85,7 +55,6 @@ body {
   height: 270px;
   position: relative;
   z-index: -1;
-  /*binome avec position, obligatoirement*/
 }
 
 .photo__img {
@@ -95,7 +64,6 @@ body {
 }
 
 /**************/
-/* coeur revoir animation*/
 h1 {
   font-family: "Shrikhand";
   font-size: 25px;
@@ -112,8 +80,6 @@ h1 {
   font-size: 23px;
   z-index: 0;
   position: absolute;
-  /* bottom: 23px;
-  right: 35px;* les marges viennent perturber la position*/
 }
 
 .coeur__coeur-couleur {
@@ -121,11 +87,8 @@ h1 {
   font-size: 23px;
   z-index: -1;
   position: absolute;
-  /* bottom: 23px;
-  right: 35px;* les marges viennent perturber la position*/
 }
 
-/**********/
 .menu {
   background-color: lightgray;
   border-top-right-radius: 35px;
@@ -141,21 +104,58 @@ h1 {
   border-bottom: 3px solid #99e2d0;
   width: 45px;
   padding-bottom: 8px;
+  animation: apparition-titre-menu 1s ease-out;
+  /* apparition sur la page*/
 }
 
-/********/
+@keyframes apparition-titre-menu {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.titre-entrees {
+  animation-delay: 0.1s;
+}
+
+.titre-plats {
+  animation-delay: 0.2s;
+}
+
+.titre-desserts {
+  animation-delay: 0.3s;
+}
+
 .carte-menu {
   width: 93%;
   justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 0px 15px 0px grey;
-  /* box-shadow:5px 5px 15px 5px rgb(0 0 0 / 10%);*/
+  overflow: hidden;
   position: relative;
   animation: apparition-menu 1s ease-out;
-  /* apparition sur la page*/
+}
+.carte-menu__nom-plat-et-description-plat {
+  padding: 10px;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
+}
+.carte-menu__nom-plat {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .carte-menu__description-plat {
   margin-top: 0px;
@@ -164,6 +164,15 @@ h1 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.carte-menu__prix-plat {
+  padding: 10px 20px;
+  align-self: flex-end;
+  margin-left: auto;
+}
+.carte-menu__prix-plat .prix {
+  font-weight: bold;
+  font-size: 15px;
 }
 .carte-menu:hover .carte-menu_boite-icon {
   width: 65px;
@@ -221,35 +230,6 @@ h1 {
   animation-delay: 0.9s;
 }
 
-/* texte carte*/
-h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 15px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.carte-menu_prix-plat {
-  padding: 10px;
-  align-self: flex-end;
-}
-
-.prix {
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.carte-menu__nom-plat-et-description-plat {
-  padding: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/*apparition boite icon*/
-/* boite-icon*/
 .carte-menu_boite-icon {
   width: 0;
   background: #99e2d0;
@@ -259,8 +239,6 @@ h3 {
   transition: width ease-in-out 0.4s;
 }
 
-/******************************/
-/* animation cercle icon-check*/
 .icon-check {
   font-size: 18px;
   color: #99e2d0;
@@ -277,7 +255,6 @@ h3 {
   opacity: 0;
 }
 
-/***************************/
 .bouton-commander {
   display: flex;
   justify-content: center;
@@ -288,9 +265,16 @@ h3 {
   border-radius: 50px;
   margin: 40px auto 0 auto;
   padding: 17px;
-  /* rajouter box shadow dans mixin*/
+  box-shadow: 0px 0px 6px 0px lightcoral;
 }
-/*footer*/
+.bouton-commander:hover {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.2s;
+  box-shadow: 0px 0px 6px 0px blue;
+  background: linear-gradient(0deg, #9356dc, #ff79da);
+}
+
 .footer {
   background-color: black;
   color: white;

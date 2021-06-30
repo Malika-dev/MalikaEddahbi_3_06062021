@@ -12,15 +12,14 @@ body {
   margin: 0;
 }
 
-/*******/
+//font
 
-/*font*/
 main,
 footer {
   font-family: "Roboto";
 }
 
-/*création du loader*/
+//création du loader
 // .chargement {
 //   position: fixed;
 //   width: 100%;
@@ -95,11 +94,11 @@ footer {
 //   animation-delay: 0.8s;
 // }
 
-/*header*/
+//header
 
 .header-accueil__logo {
   box-shadow: inset 0 -7px 9px -7px grey;
-  @extend %text-align-center;
+  text-align: center;
   &__img {
     width: 50%;
     height: auto;
@@ -111,15 +110,15 @@ footer {
   }
 }
 
-/*recherche input paris, belleville*/
+//recherche input paris, belleville
 
 .presentation {
-  background: lightgrey; /*mettre ce gris $couleur-gris-global*/
+  background: lightgrey; //mettre ce gris $couleur-gris-global
   padding-bottom: 50px;
   &__recherche {
     @extend %display-flex-align-items-center;
     justify-content: center;
-    background: lightsteelblue; /*mettre ce gris $couleur-champs-recherche*/
+    background: $couleur-champs-recherche; //mettre ce gris $couleur-champs-recherche
     width: 100%;
     padding-top: 18px;
     padding-bottom: 18px;
@@ -130,8 +129,8 @@ footer {
   &__input {
     border: inherit;
     font-size: 16px;
-    background: lightsteelblue; /*mettre ce gris $couleur-champs-recherche*/
-    @extend %text-align-center;
+    background: $couleur-champs-recherche; //mettre ce gris $couleur-champs-recherche
+    text-align: center;
     &::placeholder {
       color: black;
       opacity: 1;
@@ -139,23 +138,18 @@ footer {
   }
 }
 
-/********/
-
 h1 {
   font-size: 32px;
-  @extend %text-align-center;
+  text-align: center;
 }
 
 .sous-titre-h1 {
   font-size: 20px;
-  @extend %text-align-center;
+  text-align: center;
 }
 
 .bouton-explorer {
   @include boutons;
-  &:hover {
-    @extend %survol-bouton;
-  }
 }
 
 h2 {
@@ -163,16 +157,16 @@ h2 {
   font-size: 28px;
 }
 
-/*fonctionnement*/
+//fonctionnement
 
 .etape {
   @extend %display-flex-align-items-center;
-  background: lightgrey; /*mettre ce gris $couleur-gris-global*/
+  background: lightgrey; //mettre ce gris $couleur-gris-global
   border-radius: 25px;
   margin-bottom: 16px;
   @include width-height(320px, 65px);
-  @extend %left-right-auto;
-
+  margin-right: auto;
+  margin-left: auto;
   &:hover {
     @extend %survol-bouton;
   }
@@ -203,19 +197,10 @@ h2 {
   }
 }
 
-.les-etapes {
-  @include responsive(mobile-paysage) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-}
-
-/* cartes restaurants*/
+// cartes restaurants
 
 .les-restaurants {
-  background: lightgrey; /*mettre ce gris $couleur-gris-global*/
+  background: lightgrey; //mettre ce gris $couleur-gris-global
   padding-top: 40px;
   padding-bottom: 40px;
   margin-top: 50px;
@@ -232,7 +217,6 @@ h2 {
   }
   &__photo {
     @include width-height(100%, 200px);
-
     position: relative;
   }
   &__photo__img {
@@ -242,7 +226,7 @@ h2 {
   }
   &__mention-nouveau {
     background: $couleur-tertiaire;
-    @extend %text-align-center;
+    text-align: center;
     @extend %font-weight-bold;
     color: #2c9c81;
     @include width-height(100px, 25px);
@@ -269,27 +253,66 @@ h2 {
   }
 }
 
-/*coeur revoir animation*/
+// revoir animation coeur et remplissage couleur progressive
 
 .carte__coeur {
-  font-size: 30px;
-  margin-right: 25px;
-  margin-bottom: 30px;
+  position: relative;
+  &:hover {
+    .coeur__blanc {
+      opacity: 0;
+    }
+  }
 }
 
 .coeur__blanc {
+  display: block;
+  width: 20px;
   z-index: 0;
-  position: absolute;
+  position: relative;
+  path {
+    stroke-width: 20px;
+    stroke: black;
+  }
+  transition: all ease 0.5s;
+  opacity: 1;
 }
+
 .coeur__couleur {
-  color: violet;
-  /* background: linear-gradient(to right, $color-primary, $couleur-secondaire);*/
+  path {
+    fill: url(#gradient-coeur);
+  }
   z-index: -1;
   position: absolute;
+  top: 0;
+  left: 0;
 }
-/*******/
 
-/*footer*/
+.les-restaurants__liste {
+  @include responsive(tablette) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "la-palette-du-gout la-note-enchantee"
+      "a-la-francaise le-delice-des-sens";
+
+    .la-palette-du-gout {
+      grid-area: la-palette-du-gout;
+    }
+    .la-note-enchantee {
+      grid-area: la-note-enchantee;
+    }
+    .a-la-francaise {
+      grid-area: a-la-francaise;
+    }
+    .le-delice-des-sens {
+      grid-area: le-delice-des-sens;
+    }
+  }
+}
+
+//footer
+
 .footer {
   background: black;
   color: white;
