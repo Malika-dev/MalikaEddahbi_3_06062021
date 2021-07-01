@@ -1,8 +1,9 @@
 @charset "UTF-8";
-.carte-menu:hover, .titre-et-coeur__coeur:hover {
+.carte-menu:hover {
   cursor: pointer;
   transform: scale(1.03);
-  transition: 0.2s;
+  transition: 0.5s;
+  box-shadow: 0px 0px 6px 0px blue;
 }
 
 .carte-menu, .titre-et-coeur, .header-restaurant {
@@ -67,26 +68,48 @@ body {
 h1 {
   font-family: "Shrikhand";
   font-size: 25px;
-  margin-bottom: 0;
-  margin-left: -20px;
+  margin: 0;
 }
 
 .titre-et-coeur {
-  justify-content: space-around;
-  padding-top: 30px;
+  justify-content: space-between;
+  padding: 30px 20px 0 20px;
   position: relative;
 }
+
+.coeur {
+  position: relative;
+  margin-right: 20px;
+}
 .coeur__coeur-blanc {
-  font-size: 23px;
+  display: block;
+  width: 20px;
+  z-index: 1;
+  position: relative;
+  transition: all ease 0.5s;
+  opacity: 1;
+}
+.coeur__coeur-blanc path {
+  stroke-width: 20px;
+  stroke: black;
+}
+.coeur__coeur-blanc:hover {
+  cursor: pointer;
+  opacity: 0;
+}
+.coeur__coeur-couleur {
   z-index: 0;
   position: absolute;
+  top: 0;
+  left: 0;
+}
+.coeur__coeur-couleur path {
+  fill: url(#gradient-coeur);
 }
 
-.coeur__coeur-couleur {
-  color: violet;
-  font-size: 23px;
-  z-index: -1;
-  position: absolute;
+.entrees-plats-desserts {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .menu {
@@ -99,7 +122,6 @@ h1 {
 .menu h2 {
   font-weight: inherit;
   font-size: 17px;
-  margin-left: 20px;
   margin-top: 30px;
   border-bottom: 3px solid #99e2d0;
   width: 45px;
@@ -131,17 +153,15 @@ h1 {
 }
 
 .carte-menu {
-  width: 93%;
+  width: 100%;
   justify-content: space-between;
-  margin-right: auto;
-  margin-left: auto;
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 0px 15px 0px grey;
   overflow: hidden;
   position: relative;
-  animation: apparition-menu 1s ease-out;
+  animation: apparition-cartes-menu 1s ease-out;
 }
 .carte-menu__nom-plat-et-description-plat {
   padding: 10px;
@@ -180,11 +200,10 @@ h1 {
 .carte-menu:hover .carte-menu_boite-icon .icon-check {
   transform: translate(-50%, -50%) rotate(0deg);
   transition: all ease-in-out 0.4s;
-  transition-delay: 0;
   opacity: 1;
 }
 
-@keyframes apparition-menu {
+@keyframes apparition-cartes-menu {
   from {
     opacity: 0;
     transform: translateY(100px);
@@ -249,7 +268,6 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-180deg);
-  transition: all ease 0;
   transition-delay: 0.4s;
   transform-origin: center;
   opacity: 0;
@@ -269,10 +287,11 @@ h1 {
 }
 .bouton-commander:hover {
   cursor: pointer;
-  transform: scale(1.03);
+  transform: scale(1.02);
   transition: 0.2s;
   box-shadow: 0px 0px 6px 0px blue;
   background: linear-gradient(0deg, #9356dc, #ff79da);
+  font-weight: bold;
 }
 
 .footer {

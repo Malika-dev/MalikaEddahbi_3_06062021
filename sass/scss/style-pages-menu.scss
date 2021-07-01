@@ -56,33 +56,52 @@ body {
 h1 {
   font-family: "Shrikhand";
   font-size: 25px;
-  margin-bottom: 0;
-  margin-left: -20px;
+  margin: 0;
 }
 
 .titre-et-coeur {
   @extend %display-flex-align-items-center;
-  justify-content: space-around;
-  padding-top: 30px;
+  justify-content: space-between;
+  padding: 30px 20px 0 20px;
   position: relative;
-  &__coeur:hover {
-    @extend %survol-bouton;
+}
+
+// animation coeur
+
+.coeur {
+  position: relative;
+  margin-right: 20px;
+  &__coeur-blanc {
+    display: block;
+    width: 20px;
+    z-index: 1;
+    position: relative;
+    path {
+      stroke-width: 20px;
+      stroke: black;
+    }
+    transition: all ease 0.5s;
+    opacity: 1;
+  }
+  &__coeur-blanc:hover {
+    cursor: pointer;
+    opacity: 0;
+  }
+  &__coeur-couleur {
+    path {
+      fill: url(#gradient-coeur);
+    }
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
-// revoir animation coeur et remplissage couleur progressive
-.coeur__coeur-blanc {
-  font-size: 23px;
-  z-index: 0;
-  position: absolute;
-}
 
-.coeur__coeur-couleur {
-  color: violet;
-  font-size: 23px;
-  z-index: -1;
-  position: absolute;
+.entrees-plats-desserts {
+  padding-left: 20px;
+  padding-right: 20px;
 }
-
 //
 
 .menu {
@@ -91,10 +110,10 @@ h1 {
   border-top-left-radius: 35px;
   padding-bottom: 40px;
   margin-top: -35px;
-  & h2 {
+  h2 {
     font-weight: inherit;
     font-size: 17px;
-    margin-left: 20px;
+
     margin-top: 30px;
     border-bottom: 3px solid $couleur-tertiaire;
     width: 45px;
@@ -129,11 +148,10 @@ h1 {
 //
 
 .carte-menu {
-  width: 93%;
+  width: 100%;
   @extend %display-flex-align-items-center;
   justify-content: space-between;
-  margin-right: auto;
-  margin-left: auto;
+
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
@@ -141,7 +159,7 @@ h1 {
   // box-shadow:5px 5px 15px 5px rgb(0 0 0 / 10%);
   overflow: hidden;
   position: relative;
-  animation: apparition-menu 1s ease-out; // apparition sur la page
+  animation: apparition-cartes-menu 1s ease-out; // apparition progressive cartes menu sur la page
   &__nom-plat-et-description-plat {
     padding: 10px;
     white-space: nowrap;
@@ -175,20 +193,20 @@ h1 {
     }
   }
   &:hover {
-    @extend %survol-bouton;
+    @extend %survol-bouton-carte-menu;
     .carte-menu_boite-icon {
       width: 65px;
       .icon-check {
         transform: translate(-50%, -50%) rotate(0deg);
         transition: all ease-in-out 0.4s;
-        transition-delay: 0;
+        // transition-delay: 0;
         opacity: 1;
       }
     }
   }
 }
 
-@keyframes apparition-menu {
+@keyframes apparition-cartes-menu {
   from {
     opacity: 0;
     transform: translateY(100px);
@@ -252,7 +270,7 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-180deg);
-  transition: all ease 0;
+  // transition: all ease 0;
   transition-delay: 0.4s;
   transform-origin: center;
   opacity: 0;
@@ -260,7 +278,7 @@ h1 {
 
 //rajouter box shadow dans mixin bouton
 .bouton-commander {
-  @include boutons;
+  @include boutons-explorer-commander;
 }
 
 //footer
