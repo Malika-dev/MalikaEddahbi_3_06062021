@@ -1,40 +1,285 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style-pages-menu.css" />
     <title>Le délice des sens</title>
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&amp;display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&amp;display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/9eef00ab1b.js" crossorigin="anonymous"></script>
-</head>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shrikhand&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/9eef00ab1b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
+  <body>
     <header>
-        <a href="index.html"><i class="fas fa-arrow-left"></i></a>
-        <img  src="images/logo/ohmyfood.png" alt="logo ohmyfood">
-        <figure> 
-            <img src="images/restaurants/le-delice-des-sens.jpg" alt="Restaurant Le délice des sens"/>
-            </figure> 
+      <div class="header-restaurant">
+        <div class="header-restaurant__fleche">
+          <a class="fleche__icon" href="index.html"
+            ><i class="fas fa-arrow-left"></i
+          ></a>
+        </div>
+        <div class="header-restaurant__logo">
+          <img
+            class="logo__img"
+            src="images/logo/ohmyfood.png"
+            alt="logo ohmyfood"
+          />
+        </div>
+      </div>
+      <div class="header-restaurant__photo">
+        <img
+          class="photo__img"
+          src="images/restaurants/le-delice-des-sens.jpg"
+          alt="Restaurant Le délice des sens"
+        />
+      </div>
     </header>
 
+    <main class="roboto">
+      <div class="menu">
+        <div class="titre-et-coeur">
+          <h1 class="shrikhand">Le délice des sens</h1>
 
+          <div class="coeur">
+            <svg
+              class="coeur__coeur-blanc"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 480"
+            >
+              <path
+                d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
+                fill="#fff"
+              ></path>
+            </svg>
 
+            <svg
+              class="coeur__coeur-couleur"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 480"
+            >
+              <path
+                d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
+              ></path>
+              <linearGradient id="gradient-coeur">
+                <stop offset="0%" stop-color="#FF79DA"></stop>
+                <stop offset="100%" stop-color="#9356DC"></stop>
+              </linearGradient>
+            </svg>
+          </div>
+        </div>
+        <div class="entrees-plats-desserts">
+          <section class="entrees">
+            <h2 class="titre-entrees">ENTRÉES</h2>
 
+            <div class="carte-menu carte-1">
+              <div class="carte-menu__nom-plat-et-description-plat">
+                <h3 class="carte-menu__nom-plat">Tartare de thon</h3>
+                <p class="carte-menu__description-plat">Assaisonné au yuzu</p>
+              </div>
+              <div class="carte-menu__prix-plat">
+                <span class="prix">25€</span>
+              </div>
+              <div class="carte-menu_boite-icon">
+                <div class="carte-menu__cercle-anime">
+                  <i class="fas fa-check icon-check"></i>
+                </div>
+              </div>
+            </div>
 
+            <div class="carte-menu carte-2">
+              <div class="carte-menu__nom-plat-et-description-plat">
+                <h3 class="carte-menu__nom-plat">
+                  Bouchée de homard croustillant
+                </h3>
 
-    <footer>
-        <img  src="images/logo/ohmyfood.png" alt="logo ohmyfood">
-        
-        <ul>
-            <li><a href="#"><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
-            <li><a href="#"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
-            <li><a href="#">Mentions légales</a></li>
-            <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
-        </ul>
-       
+                <p class="carte-menu__description-plat">
+                  Et sa farandole de petits légumes
+                </p>
+              </div>
+              <div class="carte-menu__prix-plat">
+                <span class="prix">35€</span>
+              </div>
+              <div class="carte-menu_boite-icon">
+                <div class="carte-menu__cercle-anime">
+                  <i class="fas fa-check icon-check"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="carte-menu carte-3">
+              <div class="carte-menu__nom-plat-et-description-plat">
+                <h3 class="carte-menu__nom-plat">Velouté de cèpes</h3>
+
+                <p class="carte-menu__description-plat">Aux truffes</p>
+              </div>
+              <div class="carte-menu__prix-plat">
+                <span class="prix">20€</span>
+              </div>
+              <div class="carte-menu_boite-icon">
+                <div class="carte-menu__cercle-anime">
+                  <i class="fas fa-check icon-check"></i>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="plats">
+            <h2 class="titre-plats">PLATS</h2>
+
+            <div class="carte-menu carte-4">
+              <div class="carte-menu__nom-plat-et-description-plat">
+                <h3 class="carte-menu__nom-plat">
+                  Poulet rôti aux herbes de Provence
+                </h3>
+
+                <p class="carte-menu__description-plat">
+                  Et sa crème de truffe
+                </p>
+              </div>
+              <div class="carte-menu__prix-plat">
+                <span class="prix">40€</span>
+              </div>
+              <div class="carte-menu_boite-icon">
+                <div class="carte-menu__cercle-anime">
+                  <i class="fas fa-check icon-check"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="carte-menu carte-5">
+              <div class="carte-menu__nom-plat-et-description-plat">
+                <h3 class="carte-menu__nom-plat">Langouste rôtie</h3>
+
+                <p class="carte-menu__description-plat">
+                  Et ses légumes de saison
+                </p>
+              </div>
+              <div class="carte-menu__prix-plat">
+                <span class="prix">35€</span>
+              </div>
+              <div class="carte-menu_boite-icon">
+                <div class="carte-menu__cercle-anime">
+                  <i class="fas fa-check icon-check"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="carte-menu carte-6">
+              <div class="carte-menu__nom-plat-et-description-plat">
+                <h3 class="carte-menu__nom-plat">Côte de boeuf Angus</h3>
+
+                <p class="carte-menu__description-plat">
+                  Et sa purée de panais
+                </p>
+              </div>
+              <div class="carte-menu__prix-plat">
+                <span class="prix">44€</span>
+              </div>
+              <div class="carte-menu_boite-icon">
+                <div class="carte-menu__cercle-anime">
+                  <i class="fas fa-check icon-check"></i>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="desserts">
+            <h2 class="titre-desserts">DESSERTS</h2>
+
+            <div class="carte-menu carte-7">
+              <div class="carte-menu__nom-plat-et-description-plat">
+                <h3 class="carte-menu__nom-plat">Farandole de desserts</h3>
+
+                <p class="carte-menu__description-plat">Du chef</p>
+              </div>
+              <div class="carte-menu__prix-plat">
+                <span class="prix">18€</span>
+              </div>
+              <div class="carte-menu_boite-icon">
+                <div class="carte-menu__cercle-anime">
+                  <i class="fas fa-check icon-check"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="carte-menu carte-8">
+              <div class="carte-menu__nom-plat-et-description-plat">
+                <h3 class="carte-menu__nom-plat">Crème brulée</h3>
+
+                <p class="carte-menu__description-plat">Revisitée</p>
+              </div>
+              <div class="carte-menu__prix-plat">
+                <span class="prix">22€</span>
+              </div>
+              <div class="carte-menu_boite-icon">
+                <div class="carte-menu__cercle-anime">
+                  <i class="fas fa-check icon-check"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="carte-menu carte-9">
+              <div class="carte-menu__nom-plat-et-description-plat">
+                <h3 class="carte-menu__nom-plat">Tiramisu</h3>
+
+                <p class="carte-menu__description-plat">À la noisette</p>
+              </div>
+              <div class="carte-menu__prix-plat">
+                <span class="prix">23€</span>
+              </div>
+              <div class="carte-menu_boite-icon">
+                <div class="carte-menu__cercle-anime">
+                  <i class="fas fa-check icon-check"></i>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="bouton-commander">
+          <a href="#">Commander</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer roboto">
+      <div class="footer__logo">
+        <img src="images/logo/ohmyfood.png" alt="logo ohmyfood" />
+      </div>
+      <ul class="footer__list">
+        <li class="footer__list__li">
+          <a href="#"
+            ><i class="fas fa-utensils"></i>
+            <span class="footer__texte footer__texte1"
+              >Proposer un restaurant
+            </span>
+          </a>
+        </li>
+        <li class="footer__list__li">
+          <a href="#"
+            ><i class="fas fa-hands-helping"></i>
+            <span class="footer__texte footer__texte2">Devenir partenaire</span>
+          </a>
+        </li>
+        <li class="footer__list__li">
+          <a href="#"> <span class="footer__texte">Mentions légales </span></a>
+        </li>
+        <li class="footer__list__li">
+          <a href="mailto:contact@ohmyfood.com"
+            ><span class="footer__texte">Contact</span></a
+          >
+        </li>
+      </ul>
     </footer>
-</body>
+  </body>
+</html>

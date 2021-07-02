@@ -24,16 +24,20 @@ body {
 /*header*/
 
 .header-restaurant {
-  @extend %display-flex-align-items-center;
-  justify-content: center;
+  @include display-flex-align-items-center;
+  justify-content: space-between;
   margin-top: 28px;
   margin-bottom: 17px;
+  padding-left: 30px;
+  padding-right: 30px;
+
   &__fleche {
     font-size: 20px;
-    transform: translateX(-300%); /*à revoir*/
   }
   &__logo {
     @include width-height(45%, auto);
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 // voir pourquoi ne peut pas être nesté
@@ -60,7 +64,7 @@ h1 {
 }
 
 .titre-et-coeur {
-  @extend %display-flex-align-items-center;
+  @include display-flex-align-items-center;
   justify-content: space-between;
   padding: 30px 20px 0 20px;
   position: relative;
@@ -149,7 +153,7 @@ h1 {
 
 .carte-menu {
   width: 100%;
-  @extend %display-flex-align-items-center;
+  @include display-flex-align-items-center;
   justify-content: space-between;
 
   margin-bottom: 15px;

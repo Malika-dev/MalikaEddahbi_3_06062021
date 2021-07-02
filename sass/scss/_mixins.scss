@@ -23,3 +23,8 @@
   width: $width;
   height: $height;
 }
+
+@mixin display-flex-align-items-center {
+  display: flex;
+  align-items: center;
+}

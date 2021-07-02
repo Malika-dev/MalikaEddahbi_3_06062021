@@ -50,7 +50,7 @@ footer {
 .lettre {
   color: $couleur-primaire;
   font-weight: bolder;
-  font-size: 80px;
+  font-size: 20px;
   font-family: "Shrikhand";
   letter-spacing: 10px;
   animation: lettres 1.9s ease-out;
@@ -119,7 +119,7 @@ footer {
   background: lightgrey; //mettre ce gris $couleur-gris-global
   padding-bottom: 50px;
   &__recherche {
-    @extend %display-flex-align-items-center;
+    @include display-flex-align-items-center;
     justify-content: center;
     background: $couleur-champs-recherche; //mettre ce gris $couleur-champs-recherche
     width: 100%;
@@ -163,7 +163,7 @@ h2 {
 //fonctionnement
 
 .etape {
-  @extend %display-flex-align-items-center;
+  @include display-flex-align-items-center;
   background: lightgrey; //mettre ce gris $couleur-gris-global
   border-radius: 25px;
   margin-bottom: 16px;
@@ -175,7 +175,7 @@ h2 {
     @extend %survol-boutons-etapes;
   }
   &__nombre {
-    @extend %display-flex-align-items-center;
+    @include display-flex-align-items-center;
     justify-content: center;
     color: white;
     background: $couleur-primaire;
@@ -240,7 +240,7 @@ h2 {
     padding-top: 8px;
   }
   &__legende {
-    @extend %display-flex-align-items-center;
+    @include display-flex-align-items-center;
     justify-content: space-around;
     position: relative;
   }
