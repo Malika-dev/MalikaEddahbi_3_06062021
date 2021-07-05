@@ -1,9 +1,6 @@
 @import "./_variables";
 @import "./_mixins";
-@import "./_placeholders";
 @import "./mediaqueries";
-
-/*******************************/
 
 a {
   text-decoration: none;
@@ -21,7 +18,7 @@ body {
   font-family: "Roboto";
 }
 
-/*header*/
+//header
 
 .header-restaurant {
   @include display-flex-align-items-center;
@@ -33,11 +30,17 @@ body {
 
   &__fleche {
     font-size: 20px;
+    @include responsive(mobile-paysage) {
+      font-size: 30px;
+    }
   }
   &__logo {
     @include width-height(45%, auto);
     margin-right: auto;
     margin-left: auto;
+    @include responsive(tablette-desktop) {
+      @include width-height(300px, auto);
+    }
   }
 }
 // voir pourquoi ne peut pas être nesté
@@ -45,7 +48,7 @@ body {
   @include width-height(100%, auto);
 }
 
-/*header photo*/
+//header photo
 .header-restaurant__photo {
   @include width-height(100%, 270px);
   position: relative;
@@ -56,11 +59,15 @@ body {
   @include width-height(100%, 100%);
   object-fit: cover;
 }
-/**************/
+
+//
 h1 {
   font-family: "Shrikhand";
   font-size: 25px;
   margin: 0;
+  @include responsive(tablette-desktop) {
+    margin: 0 30px 2px 0;
+  }
 }
 
 .titre-et-coeur {
@@ -68,46 +75,18 @@ h1 {
   justify-content: space-between;
   padding: 30px 20px 0 20px;
   position: relative;
+  @include responsive(tablette-desktop) {
+    justify-content: center;
+  }
 }
 
 // animation coeur
 
 .coeur {
-  position: relative;
-  margin-right: 20px;
-  &__coeur-blanc {
-    display: block;
-    width: 20px;
-    z-index: 1;
-    position: relative;
-    path {
-      stroke-width: 20px;
-      stroke: black;
-    }
-    transition: all ease 0.5s;
-    opacity: 1;
-  }
-  &__coeur-blanc:hover {
-    cursor: pointer;
-    opacity: 0;
-  }
-  &__coeur-couleur {
-    path {
-      fill: url(#gradient-coeur);
-    }
-    z-index: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+  @include apparition-coeur;
 }
 
-.entrees-plats-desserts {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-//
-
+//mise en forme menu et animation apparition cartes plats
 .menu {
   background-color: lightgray;
   border-top-right-radius: 35px;
@@ -115,18 +94,36 @@ h1 {
   padding-bottom: 40px;
   margin-top: -35px;
   h2 {
+    @include responsive(tablette-desktop) {
+      margin-left: 50px;
+    }
     font-weight: inherit;
     font-size: 17px;
-
     margin-top: 30px;
     border-bottom: 3px solid $couleur-tertiaire;
     width: 45px;
     padding-bottom: 8px;
-    animation: apparition-titre-menu 1s ease-out; /* apparition sur la page*/
+    animation: apparition-titre-menu 1s ease-out;
   }
 }
 
-//apparition h2 titre menu
+.entrees-plats-desserts {
+  padding-left: 20px;
+  padding-right: 20px;
+  @include responsive(tablette-desktop) {
+    // width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+//animation apparition h2 titre menu
 
 @keyframes apparition-titre-menu {
   from {
@@ -151,16 +148,18 @@ h1 {
 
 //
 
-.carte-menu {
+.carte-plat {
   width: 100%;
   @include display-flex-align-items-center;
   justify-content: space-between;
-
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 0px 15px 0px grey;
   // box-shadow:5px 5px 15px 5px rgb(0 0 0 / 10%);
+  @include responsive(tablette-desktop) {
+    width: 75%;
+  }
   overflow: hidden;
   position: relative;
   animation: apparition-cartes-menu 1s ease-out; // apparition progressive cartes menu sur la page
@@ -197,8 +196,8 @@ h1 {
     }
   }
   &:hover {
-    @extend %survol-bouton-carte-menu;
-    .carte-menu_boite-icon {
+    @include survol-bouton-carte-plat;
+    .carte-plat_boite-icon {
       width: 65px;
       .icon-check {
         transform: translate(-50%, -50%) rotate(0deg);
@@ -221,39 +220,39 @@ h1 {
   }
 }
 
-.carte-menu:nth-child(1) {
+.carte-plat:nth-child(1) {
   animation-delay: 0.1s;
 }
-.carte-menu:nth-child(2) {
+.carte-plat:nth-child(2) {
   animation-delay: 0.2s;
 }
-.carte-menu:nth-child(3) {
+.carte-plat:nth-child(3) {
   animation-delay: 0.3s;
 }
-.carte-menu:nth-child(4) {
+.carte-plat:nth-child(4) {
   animation-delay: 0.4s;
 }
-.carte-menu:nth-child(5) {
+.carte-plat:nth-child(5) {
   animation-delay: 0.5s;
 }
-.carte-menu:nth-child(6) {
+.carte-plat:nth-child(6) {
   animation-delay: 0.6s;
 }
-.carte-menu:nth-child(7) {
+.carte-plat:nth-child(7) {
   animation-delay: 0.7s;
 }
-.carte-menu:nth-child(8) {
+.carte-plat:nth-child(8) {
   animation-delay: 0.8s;
 }
 
-.carte-menu:nth-child(9) {
+.carte-plat:nth-child(9) {
   animation-delay: 0.9s;
 }
 
 //apparition boite icon
 // boite-icon
 
-.carte-menu_boite-icon {
+.carte-plat_boite-icon {
   width: 0;
   background: $couleur-tertiaire;
   position: relative;
@@ -288,16 +287,26 @@ h1 {
 //footer
 
 .footer {
-  background-color: black;
+  background: black;
   color: white;
+  @include responsive(mobile-paysage) {
+    text-align: center;
+  }
   &__logo img {
     @include width-height(127px, 20px);
     filter: invert(100%);
     margin: 40px 0 0 25px;
+    @include responsive(mobile-paysage) {
+      width: 300px;
+      height: auto;
+    }
   }
   &__list {
     padding: 0 0 35px 25px;
     margin-top: 26px;
+    @include responsive(mobile-paysage) {
+      font-size: 20px;
+    }
     &__li {
       list-style: none;
       margin-bottom: 15px;
@@ -312,5 +321,13 @@ h1 {
   &__texte:hover {
     cursor: pointer;
     text-decoration-line: underline;
+  }
+}
+
+//limite de taille d'écran
+.conteneursite {
+  @include responsive(desktop-min-1440px) {
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }

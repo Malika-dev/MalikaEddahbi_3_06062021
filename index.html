@@ -21,303 +21,313 @@
     ></script>
   </head>
   <body>
-    <!-- chargement page-->
-    <div class="chargement">
-      <span class="lettre">o</span>
-      <span class="lettre">h</span>
-      <span class="lettre">m</span>
-      <span class="lettre">y</span>
-      <span class="lettre">f</span>
-      <span class="lettre">o</span>
-      <span class="lettre">o</span>
-      <span class="lettre">d</span>
+    <div class="conteneursite">
+      <!-- chargement page-->
+      <div class="chargement">
+        <span class="lettre">o</span>
+        <span class="lettre">h</span>
+        <span class="lettre">m</span>
+        <span class="lettre">y</span>
+        <span class="lettre">f</span>
+        <span class="lettre">o</span>
+        <span class="lettre">o</span>
+        <span class="lettre">d</span>
+      </div>
+
+      <header>
+        <div class="header-accueil__logo">
+          <img
+            class="header-accueil__logo__img"
+            src="images/logo/ohmyfood.png"
+            alt="logo ohmyfood"
+          />
+        </div>
+      </header>
+
+      <main class="roboto">
+        <section>
+          <div class="presentation">
+            <div class="presentation__recherche">
+              <div class="presentation__icon-map">
+                <i class="fas fa-map-marker-alt map"></i>
+              </div>
+              <input
+                class="presentation__input"
+                type="text"
+                placeholder="Paris, Belleville"
+              />
+            </div>
+
+            <div>
+              <h1>Réservez le menu qui vous convient</h1>
+              <p class="sous-titre-h1">
+                Découvrez des restaurants d'exception, sélectionnés par nos
+                soins.
+              </p>
+              <div class="bouton-explorer">
+                <a href="#">Explorer nos restaurants</a>
+              </div>
+            </div>
+          </div>
+          <div class="fonctionnement">
+            <h2>Fonctionnement</h2>
+
+            <div class="les-etapes">
+              <a href="#">
+                <div class="etape">
+                  <span class="etape__nombre">1</span>
+                  <div class="etape__icon">
+                    <i class="fas fa-mobile-alt"></i>
+                  </div>
+                  <p class="etape__texte etape__texte1">
+                    Choisissez un restaurant
+                  </p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="etape">
+                  <span class="etape__nombre">2</span>
+                  <div class="etape__icon">
+                    <i class="fas fa-list-ul"></i>
+                  </div>
+                  <p class="etape__texte etape__texte2">Composez votre menu</p>
+                </div>
+              </a>
+              <a href="#">
+                <div class="etape">
+                  <span class="etape__nombre">3</span>
+                  <div class="etape__icon--icon3">
+                    <i class="fas fa-store"></i>
+                  </div>
+                  <p class="etape__texte etape__texte3">
+                    Dégustez au restaurant
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="les-restaurants">
+          <h2>Restaurants</h2>
+          <!-- div pour css grid area desktop-->
+          <div class="les-restaurants__liste">
+            <a href="menu-la-palette-du-gout.html">
+              <div class="carte la-palette-du-gout">
+                <div class="carte__photo">
+                  <p class="carte__mention-nouveau">Nouveau</p>
+                  <img
+                    class="carte__photo__img"
+                    src="images/restaurants/la-palette-du-gout.jpg"
+                    alt="Restaurant La palette du goût"
+                  />
+                </div>
+                <div class="carte__legende">
+                  <div class="carte__nom-et-lieu">
+                    <h3 class="carte__nom">La palette du goût</h3>
+                    <p class="carte__lieu">Ménilmontant</p>
+                  </div>
+                  <div class="coeur">
+                    <svg
+                      class="coeur__coeur-blanc"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 480 480"
+                    >
+                      <path
+                        d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      class="coeur__coeur-couleur"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 480 480"
+                    >
+                      <path
+                        d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
+                      ></path>
+                      <linearGradient id="gradient-coeur">
+                        <stop offset="0%" stop-color="#FF79DA"></stop>
+                        <stop offset="100%" stop-color="#9356DC"></stop>
+                      </linearGradient>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="menu-la-note-enchantee.html">
+              <div class="carte la-note-enchantee">
+                <div class="carte__photo">
+                  <p class="carte__mention-nouveau">Nouveau</p>
+                  <img
+                    class="carte__photo__img"
+                    src="images/restaurants/la-note-enchantee.jpg"
+                    alt="Restaurant La note enchantée"
+                  />
+                </div>
+                <div class="carte__legende">
+                  <div class="carte__nom-et-lieu">
+                    <h3 class="carte__nom">La note enchantée</h3>
+                    <p class="carte__lieu">Charonne</p>
+                  </div>
+                  <div class="coeur">
+                    <svg
+                      class="coeur__coeur-blanc"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 480 480"
+                    >
+                      <path
+                        d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      class="coeur__coeur-couleur"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 480 480"
+                    >
+                      <path
+                        d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
+                      ></path>
+                      <linearGradient>
+                        <stop offset="0%" stop-color="#FF79DA"></stop>
+                        <stop offset="100%" stop-color="#9356DC"></stop>
+                      </linearGradient>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="menu-a-la-francaise.html">
+              <div class="carte a-la-francaise">
+                <div class="carte__photo">
+                  <img
+                    class="carte__photo__img"
+                    src="images/restaurants/a-la-francaise.jpg"
+                    alt="Restaurant À la française"
+                  />
+                </div>
+                <div class="carte__legende">
+                  <div class="carte__nom-et-lieu">
+                    <h3 class="carte__nom">À la française</h3>
+                    <p class="carte__lieu">Cité Rouge</p>
+                  </div>
+                  <div class="coeur">
+                    <svg
+                      class="coeur__coeur-blanc"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 480 480"
+                    >
+                      <path
+                        d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      class="coeur__coeur-couleur"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 480 480"
+                    >
+                      <path
+                        d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
+                      ></path>
+                      <linearGradient>
+                        <stop offset="0%" stop-color="#FF79DA"></stop>
+                        <stop offset="100%" stop-color="#9356DC"></stop>
+                      </linearGradient>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <a href="menu-le-delice-des-sens.html">
+              <div class="carte le-delice-des-sens">
+                <div class="carte__photo">
+                  <img
+                    class="carte__photo__img"
+                    src="images/restaurants/le-delice-des-sens.jpg"
+                    alt="Restaurant Le délice des sens"
+                  />
+                </div>
+                <div class="carte__legende">
+                  <div class="carte__nom-et-lieu">
+                    <h3 class="carte__nom">Le délice des sens</h3>
+                    <p class="carte__lieu">Folie-Méricourt</p>
+                  </div>
+                  <div class="coeur">
+                    <svg
+                      class="coeur__coeur-blanc"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 480 480"
+                    >
+                      <path
+                        d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
+                        fill="#fff"
+                      ></path>
+                    </svg>
+
+                    <svg
+                      class="coeur__coeur-couleur"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 480 480"
+                    >
+                      <path
+                        d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
+                      ></path>
+                      <linearGradient>
+                        <stop offset="0%" stop-color="#FF79DA"></stop>
+                        <stop offset="100%" stop-color="#9356DC"></stop>
+                      </linearGradient>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- fin div pour css grid area desktop-->
+        </section>
+      </main>
+
+      <footer class="footer roboto">
+        <div class="footer__logo">
+          <img src="images/logo/ohmyfood.png" alt="logo ohmyfood" />
+        </div>
+        <ul class="footer__list">
+          <li class="footer__list__li">
+            <a href="#"
+              ><i class="fas fa-utensils"></i>
+              <span class="footer__texte footer__texte1"
+                >Proposer un restaurant
+              </span>
+            </a>
+          </li>
+          <li class="footer__list__li">
+            <a href="#"
+              ><i class="fas fa-hands-helping"></i>
+              <span class="footer__texte footer__texte2"
+                >Devenir partenaire</span
+              >
+            </a>
+          </li>
+          <li class="footer__list__li">
+            <a href="#">
+              <span class="footer__texte">Mentions légales </span></a
+            >
+          </li>
+          <li class="footer__list__li">
+            <a href="mailto:contact@ohmyfood.com"
+              ><span class="footer__texte">Contact</span></a
+            >
+          </li>
+        </ul>
+      </footer>
     </div>
-
-    <header>
-      <div class="header-accueil__logo">
-        <img
-          class="header-accueil__logo__img"
-          src="images/logo/ohmyfood.png"
-          alt="logo ohmyfood"
-        />
-      </div>
-    </header>
-
-    <main class="roboto">
-      <section>
-        <div class="presentation">
-          <div class="presentation__recherche">
-            <div class="presentation__icon-map">
-              <i class="fas fa-map-marker-alt map"></i>
-            </div>
-            <input
-              class="presentation__input"
-              type="text"
-              placeholder="Paris, Belleville"
-            />
-          </div>
-
-          <div>
-            <h1>Réservez le menu qui vous convient</h1>
-            <p class="sous-titre-h1">
-              Découvrez des restaurants d'exception, sélectionnés par nos soins.
-            </p>
-            <div class="bouton-explorer">
-              <a href="#">Explorer nos restaurants</a>
-            </div>
-          </div>
-        </div>
-        <div class="fonctionnement">
-          <h2>Fonctionnement</h2>
-
-          <div class="les-etapes">
-            <a href="#">
-              <div class="etape">
-                <span class="etape__nombre">1</span>
-                <div class="etape__icon">
-                  <i class="fas fa-mobile-alt"></i>
-                </div>
-                <p class="etape__texte etape__texte1">
-                  Choisissez un restaurant
-                </p>
-              </div>
-            </a>
-            <a href="#">
-              <div class="etape">
-                <span class="etape__nombre">2</span>
-                <div class="etape__icon">
-                  <i class="fas fa-list-ul"></i>
-                </div>
-                <p class="etape__texte etape__texte2">Composez votre menu</p>
-              </div>
-            </a>
-            <a href="#">
-              <div class="etape">
-                <span class="etape__nombre">3</span>
-                <div class="etape__icon--icon3">
-                  <i class="fas fa-store"></i>
-                </div>
-                <p class="etape__texte etape__texte3">Dégustez au restaurant</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="les-restaurants">
-        <h2>Restaurants</h2>
-        <!-- div pour css grid area desktop-->
-        <div class="les-restaurants__liste">
-          <a href="menu-la-palette-du-gout.html">
-            <div class="carte la-palette-du-gout">
-              <div class="carte__photo">
-                <p class="carte__mention-nouveau">Nouveau</p>
-                <img
-                  class="carte__photo__img"
-                  src="images/restaurants/la-palette-du-gout.jpg"
-                  alt="Restaurant La palette du goût"
-                />
-              </div>
-              <div class="carte__legende">
-                <div class="carte__nom-et-lieu">
-                  <h3 class="carte__nom">La palette du goût</h3>
-                  <p class="carte__lieu">Ménilmontant</p>
-                </div>
-                <div class="coeur">
-                  <svg
-                    class="coeur__coeur-blanc"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 480 480"
-                  >
-                    <path
-                      d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
-                      fill="#fff"
-                    ></path>
-                  </svg>
-
-                  <svg
-                    class="coeur__coeur-couleur"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 480 480"
-                  >
-                    <path
-                      d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
-                    ></path>
-                    <linearGradient id="gradient-coeur">
-                      <stop offset="0%" stop-color="#FF79DA"></stop>
-                      <stop offset="100%" stop-color="#9356DC"></stop>
-                    </linearGradient>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="menu-la-note-enchantee.html">
-            <div class="carte la-note-enchantee">
-              <div class="carte__photo">
-                <p class="carte__mention-nouveau">Nouveau</p>
-                <img
-                  class="carte__photo__img"
-                  src="images/restaurants/la-note-enchantee.jpg"
-                  alt="Restaurant La note enchantée"
-                />
-              </div>
-              <div class="carte__legende">
-                <div class="carte__nom-et-lieu">
-                  <h3 class="carte__nom">La note enchantée</h3>
-                  <p class="carte__lieu">Charonne</p>
-                </div>
-                <div class="coeur">
-                  <svg
-                    class="coeur__coeur-blanc"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 480 480"
-                  >
-                    <path
-                      d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
-                      fill="#fff"
-                    ></path>
-                  </svg>
-
-                  <svg
-                    class="coeur__coeur-couleur"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 480 480"
-                  >
-                    <path
-                      d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
-                    ></path>
-                    <linearGradient>
-                      <stop offset="0%" stop-color="#FF79DA"></stop>
-                      <stop offset="100%" stop-color="#9356DC"></stop>
-                    </linearGradient>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="menu-a-la-francaise.html">
-            <div class="carte a-la-francaise">
-              <div class="carte__photo">
-                <img
-                  class="carte__photo__img"
-                  src="images/restaurants/a-la-francaise.jpg"
-                  alt="Restaurant À la française"
-                />
-              </div>
-              <div class="carte__legende">
-                <div class="carte__nom-et-lieu">
-                  <h3 class="carte__nom">À la française</h3>
-                  <p class="carte__lieu">Cité Rouge</p>
-                </div>
-                <div class="coeur">
-                  <svg
-                    class="coeur__coeur-blanc"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 480 480"
-                  >
-                    <path
-                      d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
-                      fill="#fff"
-                    ></path>
-                  </svg>
-
-                  <svg
-                    class="coeur__coeur-couleur"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 480 480"
-                  >
-                    <path
-                      d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
-                    ></path>
-                    <linearGradient>
-                      <stop offset="0%" stop-color="#FF79DA"></stop>
-                      <stop offset="100%" stop-color="#9356DC"></stop>
-                    </linearGradient>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </a>
-
-          <a href="menu-le-delice-des-sens.html">
-            <div class="carte le-delice-des-sens">
-              <div class="carte__photo">
-                <img
-                  class="carte__photo__img"
-                  src="images/restaurants/le-delice-des-sens.jpg"
-                  alt="Restaurant Le délice des sens"
-                />
-              </div>
-              <div class="carte__legende">
-                <div class="carte__nom-et-lieu">
-                  <h3 class="carte__nom">Le délice des sens</h3>
-                  <p class="carte__lieu">Folie-Méricourt</p>
-                </div>
-                <div class="coeur">
-                  <svg
-                    class="coeur__coeur-blanc"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 480 480"
-                  >
-                    <path
-                      d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
-                      fill="#fff"
-                    ></path>
-                  </svg>
-
-                  <svg
-                    class="coeur__coeur-couleur"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 480 480"
-                  >
-                    <path
-                      d="m348 8c-44.773438.003906-86.066406 24.164062-108 63.199219-21.933594-39.035157-63.226562-63.195313-108-63.199219-68.480469 0-124 63.519531-124 132 0 172 232 292 232 292s232-120 232-292c0-68.480469-55.519531-132-124-132zm0 0"
-                    ></path>
-                    <linearGradient>
-                      <stop offset="0%" stop-color="#FF79DA"></stop>
-                      <stop offset="100%" stop-color="#9356DC"></stop>
-                    </linearGradient>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <!-- fin div pour css grid area desktop-->
-      </section>
-    </main>
-
-    <footer class="footer roboto">
-      <div class="footer__logo">
-        <img src="images/logo/ohmyfood.png" alt="logo ohmyfood" />
-      </div>
-      <ul class="footer__list">
-        <li class="footer__list__li">
-          <a href="#"
-            ><i class="fas fa-utensils"></i>
-            <span class="footer__texte footer__texte1"
-              >Proposer un restaurant
-            </span>
-          </a>
-        </li>
-        <li class="footer__list__li">
-          <a href="#"
-            ><i class="fas fa-hands-helping"></i>
-            <span class="footer__texte footer__texte2">Devenir partenaire</span>
-          </a>
-        </li>
-        <li class="footer__list__li">
-          <a href="#"> <span class="footer__texte">Mentions légales </span></a>
-        </li>
-        <li class="footer__list__li">
-          <a href="mailto:contact@ohmyfood.com"
-            ><span class="footer__texte">Contact</span></a
-          >
-        </li>
-      </ul>
-    </footer>
+    <!--fin conteneursite-->
   </body>
 </html>

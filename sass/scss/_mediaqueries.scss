@@ -4,7 +4,7 @@
       @content;
     }
   }
-  @if $breakpoint == tablette {
+  @if $breakpoint == tablette-desktop {
     @media all and (min-width: 768px) {
       @content;
     }

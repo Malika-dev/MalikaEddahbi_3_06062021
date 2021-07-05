@@ -1,6 +1,5 @@
 @import "./_variables";
 @import "./_mixins";
-@import "./_placeholders";
 @import "./mediaqueries";
 
 a {
@@ -113,7 +112,7 @@ footer {
   }
 }
 
-//recherche input paris, belleville
+//recherche input Paris, Belleville
 
 .presentation {
   background: lightgrey; //mettre ce gris $couleur-gris-global
@@ -128,12 +127,18 @@ footer {
   }
   &__icon-map {
     font-size: 18px;
+    @include responsive(tablette-desktop) {
+      font-size: 20px;
+    }
   }
   &__input {
     border: inherit;
     font-size: 16px;
     background: $couleur-champs-recherche; //mettre ce gris $couleur-champs-recherche
     text-align: center;
+    @include responsive(tablette-desktop) {
+      font-size: 20px;
+    }
     &::placeholder {
       color: black;
       opacity: 1;
@@ -158,10 +163,23 @@ h1 {
 h2 {
   margin-left: 25px;
   font-size: 28px;
+  @include responsive(tablette-desktop) {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 //fonctionnement
-
+.les-etapes {
+  @include responsive(tablette-desktop) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @include display-flex-align-items-center;
+    justify-content: space-around;
+  }
+}
 .etape {
   @include display-flex-align-items-center;
   background: lightgrey; //mettre ce gris $couleur-gris-global
@@ -171,8 +189,12 @@ h2 {
   @include width-height(320px, 65px);
   margin-right: auto;
   margin-left: auto;
+  @include responsive(tablette-desktop) {
+    @include width-height(300px, auto);
+    margin-right: 15px;
+  }
   &:hover {
-    @extend %survol-boutons-etapes;
+    @include survol-boutons-etapes;
   }
   &__nombre {
     @include display-flex-align-items-center;
@@ -197,7 +219,7 @@ h2 {
   }
   &__texte {
     font-size: 17px;
-    @extend %font-weight-bold;
+    @include font-weight-bold;
   }
 }
 
@@ -208,7 +230,31 @@ h2 {
   padding-top: 40px;
   padding-bottom: 40px;
   margin-top: 50px;
+  .les-restaurants__liste {
+    @include responsive(tablette-desktop) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas:
+        "la-palette-du-gout la-note-enchantee"
+        "a-la-francaise le-delice-des-sens";
+
+      .la-palette-du-gout {
+        grid-area: la-palette-du-gout;
+      }
+      .la-note-enchantee {
+        grid-area: la-note-enchantee;
+      }
+      .a-la-francaise {
+        grid-area: a-la-francaise;
+      }
+      .le-delice-des-sens {
+        grid-area: le-delice-des-sens;
+      }
+    }
+  }
 }
+
 .carte {
   background: white;
   box-shadow: 0px 0px 6px 0px black;
@@ -217,7 +263,7 @@ h2 {
   margin: 20px auto;
 
   &:hover {
-    @extend %survol-carte-restaurant;
+    @include survol-carte-restaurant;
   }
   &__photo {
     @include width-height(100%, 200px);
@@ -231,7 +277,7 @@ h2 {
   &__mention-nouveau {
     background: $couleur-tertiaire;
     text-align: center;
-    @extend %font-weight-bold;
+    @include font-weight-bold;
     color: #2c9c81;
     @include width-height(100px, 25px);
     position: absolute;
@@ -260,55 +306,7 @@ h2 {
 // animation coeur
 
 .coeur {
-  position: relative;
-  &__coeur-blanc {
-    display: block;
-    width: 20px;
-    z-index: 0;
-    position: relative;
-    path {
-      stroke-width: 20px;
-      stroke: black;
-    }
-    transition: all ease 0.5s;
-    opacity: 1;
-  }
-  &__coeur-blanc:hover {
-    opacity: 0;
-  }
-  &__coeur-couleur {
-    path {
-      fill: url(#gradient-coeur);
-    }
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
-
-.les-restaurants__liste {
-  @include responsive(tablette) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-      "la-palette-du-gout la-note-enchantee"
-      "a-la-francaise le-delice-des-sens";
-
-    .la-palette-du-gout {
-      grid-area: la-palette-du-gout;
-    }
-    .la-note-enchantee {
-      grid-area: la-note-enchantee;
-    }
-    .a-la-francaise {
-      grid-area: a-la-francaise;
-    }
-    .le-delice-des-sens {
-      grid-area: le-delice-des-sens;
-    }
-  }
+  @include apparition-coeur;
 }
 
 //footer
@@ -323,10 +321,17 @@ h2 {
     @include width-height(127px, 20px);
     filter: invert(100%);
     margin: 40px 0 0 25px;
+    @include responsive(mobile-paysage) {
+      width: 300px;
+      height: auto;
+    }
   }
   &__list {
     padding: 0 0 35px 25px;
     margin-top: 26px;
+    @include responsive(mobile-paysage) {
+      font-size: 20px;
+    }
     &__li {
       list-style: none;
       margin-bottom: 15px;
@@ -341,5 +346,13 @@ h2 {
   &__texte:hover {
     cursor: pointer;
     text-decoration-line: underline;
+  }
+}
+
+//limite de taille d'écran
+.conteneursite {
+  @include responsive(desktop-min-1440px) {
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }

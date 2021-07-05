@@ -1,3 +1,9 @@
+@mixin survol-bouton {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: 0.5s;
+}
+
 @mixin boutons-explorer-commander {
   display: flex;
   justify-content: center;
@@ -17,6 +23,72 @@
     background: linear-gradient(0deg, $couleur-primaire, $couleur-secondaire);
     font-weight: bold;
   }
+}
+
+@mixin survol-boutons-etapes {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: 0.5s;
+  background-color: lightgrey;
+  color: blue;
+  box-shadow: 0px 0px 8px 0px black;
+  .etape__nombre {
+    background-color: lightblue;
+    color: blue;
+  }
+  .etape__icon {
+    color: blue;
+  }
+  .etape__icon--icon3 {
+    color: blue;
+  }
+}
+
+@mixin survol-carte-restaurant {
+  cursor: pointer;
+  transform: scale(1.02);
+  transition: 0.5s;
+  box-shadow: 0px 0px 6px 0px blue;
+}
+
+@mixin survol-bouton-carte-plat {
+  cursor: pointer;
+  transform: scale(1.03);
+  transition: 0.5s;
+  box-shadow: 0px 0px 6px 0px blue;
+}
+
+@mixin apparition-coeur {
+  cursor: pointer;
+  position: relative;
+  &__coeur-blanc {
+    display: block;
+    width: 20px;
+    z-index: 1;
+    position: relative;
+    path {
+      stroke-width: 20px;
+      stroke: black;
+    }
+    transition: all ease 0.5s;
+    opacity: 1;
+  }
+  &__coeur-blanc:hover {
+    opacity: 0;
+  }
+  &__coeur-couleur {
+    path {
+      fill: url(#gradient-coeur);
+    }
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+@mixin font-weight-bold {
+  font-weight: bold;
 }
 
 @mixin width-height($width, $height) {
