@@ -27,7 +27,7 @@ body {
 .header-restaurant__fleche {
   font-size: 20px;
 }
-@media all and (min-width: 576px) {
+@media all and (min-width: 768px) {
   .header-restaurant__fleche {
     font-size: 30px;
   }
@@ -38,6 +38,16 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
+.header-restaurant__logo img {
+  width: 100%;
+  height: auto;
+}
+@media all and (min-width: 576px) {
+  .header-restaurant__logo {
+    width: 225px;
+    height: auto;
+  }
+}
 @media all and (min-width: 768px) {
   .header-restaurant__logo {
     width: 300px;
@@ -45,16 +55,21 @@ body {
   }
 }
 
-.logo__img {
-  width: 100%;
-  height: auto;
-}
-
 .header-restaurant__photo {
   width: 100%;
-  height: 270px;
+  height: 280px;
   position: relative;
   z-index: -1;
+}
+@media all and (min-width: 576px) {
+  .header-restaurant__photo {
+    height: 300px;
+  }
+}
+@media all and (min-width: 768px) {
+  .header-restaurant__photo {
+    height: 350px;
+  }
 }
 
 .photo__img {
@@ -71,6 +86,7 @@ h1 {
 @media all and (min-width: 768px) {
   h1 {
     margin: 0 30px 2px 0;
+    font-size: 38px;
   }
 }
 
@@ -115,9 +131,14 @@ h1 {
 .coeur__coeur-couleur path {
   fill: url(#gradient-coeur);
 }
+@media all and (min-width: 768px) {
+  .coeur__coeur-blanc {
+    width: 38px;
+  }
+}
 
 .menu {
-  background-color: lightgray;
+  background-color: #e6e6e6;
   border-top-right-radius: 35px;
   border-top-left-radius: 35px;
   padding-bottom: 40px;
@@ -134,7 +155,7 @@ h1 {
 }
 @media all and (min-width: 768px) {
   .menu h2 {
-    margin-left: 50px;
+    font-size: 25px;
   }
 }
 
@@ -143,15 +164,21 @@ h1 {
   padding-right: 20px;
 }
 @media all and (min-width: 768px) {
-  .entrees-plats-desserts {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0;
-    padding-right: 0;
+  .entrees-plats-desserts section {
+    max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+@media all and (min-width: 1200px) {
+  .entrees-plats-desserts {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .entrees-plats-desserts > section {
+    width: calc(100% / 3 - 20px);
   }
 }
 
@@ -185,15 +212,10 @@ h1 {
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0px 0px 15px 0px grey;
+  box-shadow: 0px 0px 11px -3px #000000;
   overflow: hidden;
   position: relative;
-  animation: apparition-cartes-menu 1s ease-out;
-}
-@media all and (min-width: 768px) {
-  .carte-plat {
-    width: 75%;
-  }
+  animation: apparition-cartes-plats 1s ease-out;
 }
 .carte-plat__nom-plat-et-description-plat {
   padding: 10px;
@@ -230,7 +252,7 @@ h1 {
   cursor: pointer;
   transform: scale(1.03);
   transition: 0.5s;
-  box-shadow: 0px 0px 6px 0px blue;
+  box-shadow: 0px 0px 11px -1px #000000;
 }
 .carte-plat:hover .carte-plat_boite-icon {
   width: 65px;
@@ -241,7 +263,7 @@ h1 {
   opacity: 1;
 }
 
-@keyframes apparition-cartes-menu {
+@keyframes apparition-cartes-plats {
   from {
     opacity: 0;
     transform: translateY(100px);
@@ -316,20 +338,21 @@ h1 {
   justify-content: center;
   align-items: center;
   color: white;
-  background: linear-gradient(0deg, #9356dc, #ff79da);
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
   width: 200px;
   border-radius: 50px;
   margin: 40px auto 0 auto;
   padding: 17px;
-  box-shadow: 0px 0px 6px 0px lightcoral;
+  box-shadow: 0px 0px 11px -3px #000000;
 }
 .bouton-commander:hover {
   cursor: pointer;
   transform: scale(1.02);
   transition: 0.2s;
-  box-shadow: 0px 0px 6px 0px blue;
-  background: linear-gradient(0deg, #9356dc, #ff79da);
+  box-shadow: 0px 0px 11px -1px #000000;
+  background: linear-gradient(to bottom right, #ff79da 20%, #9356dc 100%);
   font-weight: bold;
+  text-shadow: 3px 3px 10px #fff;
 }
 
 .footer {
@@ -349,7 +372,13 @@ h1 {
 }
 @media all and (min-width: 576px) {
   .footer__logo img {
-    width: 300px;
+    width: 200px;
+    height: auto;
+  }
+}
+@media all and (min-width: 768px) {
+  .footer__logo img {
+    width: 250px;
     height: auto;
   }
 }

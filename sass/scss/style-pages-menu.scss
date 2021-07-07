@@ -30,7 +30,7 @@ body {
 
   &__fleche {
     font-size: 20px;
-    @include responsive(mobile-paysage) {
+    @include responsive(tablette) {
       font-size: 30px;
     }
   }
@@ -38,21 +38,30 @@ body {
     @include width-height(45%, auto);
     margin-right: auto;
     margin-left: auto;
-    @include responsive(tablette-desktop) {
+    & img {
+      @include width-height(100%, auto);
+    }
+    @include responsive(mobile-large) {
+      width: 225px;
+      height: auto;
+    }
+    @include responsive(tablette) {
       @include width-height(300px, auto);
     }
   }
 }
-// voir pourquoi ne peut pas être nesté
-.logo__img {
-  @include width-height(100%, auto);
-}
 
 //header photo
 .header-restaurant__photo {
-  @include width-height(100%, 270px);
+  @include width-height(100%, 280px);
   position: relative;
   z-index: -1;
+  @include responsive(mobile-large) {
+    height: 300px;
+  }
+  @include responsive(tablette) {
+    height: 350px;
+  }
 }
 
 .photo__img {
@@ -65,8 +74,9 @@ h1 {
   font-family: "Shrikhand";
   font-size: 25px;
   margin: 0;
-  @include responsive(tablette-desktop) {
+  @include responsive(tablette) {
     margin: 0 30px 2px 0;
+    font-size: 38px;
   }
 }
 
@@ -75,7 +85,7 @@ h1 {
   justify-content: space-between;
   padding: 30px 20px 0 20px;
   position: relative;
-  @include responsive(tablette-desktop) {
+  @include responsive(tablette) {
     justify-content: center;
   }
 }
@@ -84,19 +94,21 @@ h1 {
 
 .coeur {
   @include apparition-coeur;
+  &__coeur-blanc {
+    @include responsive(tablette) {
+      width: 38px;
+    }
+  }
 }
 
 //mise en forme menu et animation apparition cartes plats
 .menu {
-  background-color: lightgray;
+  background-color: $couleur-gris-global;
   border-top-right-radius: 35px;
   border-top-left-radius: 35px;
   padding-bottom: 40px;
   margin-top: -35px;
   h2 {
-    @include responsive(tablette-desktop) {
-      margin-left: 50px;
-    }
     font-weight: inherit;
     font-size: 17px;
     margin-top: 30px;
@@ -104,22 +116,31 @@ h1 {
     width: 45px;
     padding-bottom: 8px;
     animation: apparition-titre-menu 1s ease-out;
+    @include responsive(tablette) {
+      font-size: 25px;
+    }
   }
 }
 
 .entrees-plats-desserts {
   padding-left: 20px;
   padding-right: 20px;
-  @include responsive(tablette-desktop) {
-    // width: 100%;
+  @include responsive(tablette) {
+    section {
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @include responsive(desktop-large) {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    & > section {
+      width: calc(100% / 3 - 20px);
+    }
   }
 }
 
@@ -155,14 +176,11 @@ h1 {
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0px 0px 15px 0px grey;
-  // box-shadow:5px 5px 15px 5px rgb(0 0 0 / 10%);
-  @include responsive(tablette-desktop) {
-    width: 75%;
-  }
+  @include box-shadow;
   overflow: hidden;
   position: relative;
-  animation: apparition-cartes-menu 1s ease-out; // apparition progressive cartes menu sur la page
+  animation: apparition-cartes-plats 1s ease-out; // apparition progressive cartes menu sur la page
+
   &__nom-plat-et-description-plat {
     padding: 10px;
     white-space: nowrap;
@@ -196,20 +214,20 @@ h1 {
     }
   }
   &:hover {
-    @include survol-bouton-carte-plat;
+    @include survol-carte;
     .carte-plat_boite-icon {
       width: 65px;
       .icon-check {
         transform: translate(-50%, -50%) rotate(0deg);
         transition: all ease-in-out 0.4s;
-        // transition-delay: 0;
+
         opacity: 1;
       }
     }
   }
 }
 
-@keyframes apparition-cartes-menu {
+@keyframes apparition-cartes-plats {
   from {
     opacity: 0;
     transform: translateY(100px);
@@ -273,7 +291,7 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(-180deg);
-  // transition: all ease 0;
+
   transition-delay: 0.4s;
   transform-origin: center;
   opacity: 0;
@@ -289,22 +307,26 @@ h1 {
 .footer {
   background: black;
   color: white;
-  @include responsive(mobile-paysage) {
+  @include responsive(mobile-large) {
     text-align: center;
   }
   &__logo img {
     @include width-height(127px, 20px);
     filter: invert(100%);
     margin: 40px 0 0 25px;
-    @include responsive(mobile-paysage) {
-      width: 300px;
+    @include responsive(mobile-large) {
+      width: 200px;
+      height: auto;
+    }
+    @include responsive(tablette) {
+      width: 250px;
       height: auto;
     }
   }
   &__list {
     padding: 0 0 35px 25px;
     margin-top: 26px;
-    @include responsive(mobile-paysage) {
+    @include responsive(mobile-large) {
       font-size: 20px;
     }
     &__li {
@@ -326,7 +348,7 @@ h1 {
 
 //limite de taille d'écran
 .conteneursite {
-  @include responsive(desktop-min-1440px) {
+  @include responsive(desktop-extra-large) {
     max-width: 1440px;
     margin: 0 auto;
   }

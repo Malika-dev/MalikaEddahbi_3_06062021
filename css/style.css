@@ -22,7 +22,7 @@ footer {
   align-items: center;
   z-index: 10001;
   animation: chargement 0.3s forwards ease-out;
-  animation-delay: 1.7s;
+  animation-delay: 2.7s;
 }
 
 @keyframes chargement {
@@ -38,7 +38,7 @@ footer {
 .lettre {
   color: #9356dc;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 50px;
   font-family: "Shrikhand";
   letter-spacing: 10px;
   animation: lettres 1.9s ease-out;
@@ -91,7 +91,6 @@ footer {
 }
 
 .header-accueil__logo {
-  box-shadow: inset 0 -7px 9px -7px grey;
   text-align: center;
 }
 .header-accueil__logo__img {
@@ -102,19 +101,26 @@ footer {
 }
 @media all and (min-width: 576px) {
   .header-accueil__logo__img {
+    width: 200px;
+    height: auto;
+  }
+}
+@media all and (min-width: 768px) {
+  .header-accueil__logo__img {
     width: 300px;
   }
 }
 
 .presentation {
-  background: lightgrey;
+  background: #e6e6e6;
   padding-bottom: 50px;
 }
 .presentation__recherche {
+  box-shadow: inset 0 7px 9px -7px grey;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e6e6e6;
+  background: #dcdcdc;
   width: 100%;
   padding-top: 18px;
   padding-bottom: 18px;
@@ -130,7 +136,7 @@ footer {
 .presentation__input {
   border: inherit;
   font-size: 16px;
-  background: #e6e6e6;
+  background: #dcdcdc;
   text-align: center;
 }
 @media all and (min-width: 768px) {
@@ -158,20 +164,21 @@ h1 {
   justify-content: center;
   align-items: center;
   color: white;
-  background: linear-gradient(0deg, #9356dc, #ff79da);
+  background: linear-gradient(to bottom right, #ff79da, #9356dc);
   width: 200px;
   border-radius: 50px;
   margin: 40px auto 0 auto;
   padding: 17px;
-  box-shadow: 0px 0px 6px 0px lightcoral;
+  box-shadow: 0px 0px 11px -3px #000000;
 }
 .bouton-explorer:hover {
   cursor: pointer;
   transform: scale(1.02);
   transition: 0.2s;
-  box-shadow: 0px 0px 6px 0px blue;
-  background: linear-gradient(0deg, #9356dc, #ff79da);
+  box-shadow: 0px 0px 11px -1px #000000;
+  background: linear-gradient(to bottom right, #ff79da 20%, #9356dc 100%);
   font-weight: bold;
+  text-shadow: 3px 3px 10px #fff;
 }
 
 h2 {
@@ -186,33 +193,31 @@ h2 {
   }
 }
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 1200px) {
   .les-etapes {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-wrap: wrap;
   }
 }
 
 .etape {
   display: flex;
   align-items: center;
-  background: lightgrey;
+  background: #e6e6e6;
   border-radius: 25px;
   margin-bottom: 16px;
-  box-shadow: 0px 0px 10px 0px grey;
+  box-shadow: 0px 0px 11px -3px #000000;
   width: 320px;
   height: 65px;
   margin-right: auto;
   margin-left: auto;
 }
-@media all and (min-width: 768px) {
+@media all and (min-width: 1200px) {
   .etape {
-    width: 300px;
-    height: auto;
+    width: 340px;
+    height: 65px;
     margin-right: 15px;
   }
 }
@@ -220,19 +225,16 @@ h2 {
   cursor: pointer;
   transform: scale(1.02);
   transition: 0.5s;
-  background-color: lightgrey;
-  color: blue;
-  box-shadow: 0px 0px 8px 0px black;
+  background-color: #eeefec;
+  color: #808080;
+  box-shadow: 0px 0px 11px -1px #000000;
 }
 .etape:hover .etape__nombre {
-  background-color: lightblue;
-  color: blue;
-}
-.etape:hover .etape__icon {
-  color: blue;
+  background: linear-gradient(to bottom right, #ff79da 0%, #9356dc 100%);
+  font-weight: bold;
 }
 .etape:hover .etape__icon--icon3 {
-  color: blue;
+  color: grey;
 }
 .etape__nombre {
   display: flex;
@@ -246,6 +248,11 @@ h2 {
   height: 28px;
   transform: translateX(-45%);
   margin-right: 16px;
+}
+@media all and (min-width: 992px) {
+  .etape__nombre {
+    font-size: 17px;
+  }
 }
 .etape__icon {
   font-size: 20px;
@@ -261,9 +268,14 @@ h2 {
   font-size: 17px;
   font-weight: bold;
 }
+@media all and (min-width: 992px) {
+  .etape__texte {
+    font-size: 20px;
+  }
+}
 
 .les-restaurants {
-  background: lightgrey;
+  background: #e6e6e6;
   padding-top: 40px;
   padding-bottom: 40px;
   margin-top: 50px;
@@ -291,16 +303,21 @@ h2 {
 
 .carte {
   background: white;
-  box-shadow: 0px 0px 6px 0px black;
+  box-shadow: 0px 0px 11px -3px #000000;
   border-radius: 20px;
   width: 88%;
   margin: 20px auto;
 }
+@media all and (min-width: 992px) {
+  .carte {
+    font-size: 20px;
+  }
+}
 .carte:hover {
   cursor: pointer;
-  transform: scale(1.02);
+  transform: scale(1.03);
   transition: 0.5s;
-  box-shadow: 0px 0px 6px 0px blue;
+  box-shadow: 0px 0px 11px -1px #000000;
 }
 .carte__photo {
   width: 100%;
@@ -323,7 +340,12 @@ h2 {
   position: absolute;
   top: 0;
   right: 10px;
-  padding-top: 8px;
+  padding-top: 5px;
+}
+@media all and (min-width: 992px) {
+  .carte__mention-nouveau {
+    padding: 5px;
+  }
 }
 .carte__legende {
   display: flex;
@@ -371,6 +393,11 @@ h2 {
 .coeur__coeur-couleur path {
   fill: url(#gradient-coeur);
 }
+@media all and (min-width: 992px) {
+  .coeur__coeur-blanc {
+    width: 30px;
+  }
+}
 
 .footer {
   background: black;
@@ -389,7 +416,13 @@ h2 {
 }
 @media all and (min-width: 576px) {
   .footer__logo img {
-    width: 300px;
+    width: 200px;
+    height: auto;
+  }
+}
+@media all and (min-width: 768px) {
+  .footer__logo img {
+    width: 250px;
     height: auto;
   }
 }

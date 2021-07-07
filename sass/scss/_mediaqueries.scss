@@ -1,25 +1,25 @@
 @mixin responsive($breakpoint) {
-  @if $breakpoint == mobile-paysage {
+  @if $breakpoint == mobile-large {
     @media all and (min-width: 576px) {
       @content;
     }
   }
-  @if $breakpoint == tablette-desktop {
+  @if $breakpoint == tablette {
     @media all and (min-width: 768px) {
       @content;
     }
   }
-  @if $breakpoint == desktop-min-992px {
+  @if $breakpoint == desktop {
     @media all and (min-width: 992px) {
       @content;
     }
   }
-  @if $breakpoint == desktop-min-1200px {
+  @if $breakpoint == desktop-large {
     @media all and (min-width: 1200px) {
       @content;
     }
   }
-  @if $breakpoint == desktop-min-1440px {
+  @if $breakpoint == desktop-extra-large {
     @media all and (min-width: 1440px) {
       @content;
     }
