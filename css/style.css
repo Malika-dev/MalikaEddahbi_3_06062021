@@ -127,6 +127,7 @@ footer {
 }
 .presentation__icon-map {
   font-size: 18px;
+  margin-right: 5px;
 }
 @media all and (min-width: 768px) {
   .presentation__icon-map {
@@ -138,6 +139,7 @@ footer {
   font-size: 16px;
   background: #dcdcdc;
   text-align: center;
+  width: 160px;
 }
 @media all and (min-width: 768px) {
   .presentation__input {
@@ -160,22 +162,20 @@ h1 {
 }
 
 .bouton-explorer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   color: white;
   background: linear-gradient(to bottom right, #ff79da, #9356dc);
   width: 200px;
   border-radius: 50px;
   margin: 40px auto 0 auto;
   padding: 17px;
-  box-shadow: 0px 0px 11px -3px #000000;
+  box-shadow: 0px 0px 11px -3px #a8a8a8;
 }
 .bouton-explorer:hover {
   cursor: pointer;
   transform: scale(1.02);
   transition: 0.2s;
-  box-shadow: 0px 0px 11px -1px #000000;
+  box-shadow: 0px 0px 11px -1px #a6a6a6;
   background: linear-gradient(to bottom right, #ff79da 20%, #9356dc 100%);
 }
 
@@ -206,7 +206,7 @@ h2 {
   background: #e6e6e6;
   border-radius: 25px;
   margin-bottom: 16px;
-  box-shadow: 0px 0px 11px -3px #000000;
+  box-shadow: 0px 0px 11px -3px #a8a8a8;
   width: 320px;
   height: 65px;
   margin-right: auto;
@@ -223,16 +223,14 @@ h2 {
   cursor: pointer;
   transform: scale(1.02);
   transition: 0.5s;
-  background-color: #eeefec;
-  color: #808080;
-  box-shadow: 0px 0px 11px -1px #000000;
+  background-color: #eae6ff;
+  box-shadow: 0px 0px 11px -1px #a6a6a6;
 }
 .etape:hover .etape__nombre {
-  background: linear-gradient(to bottom right, #ff79da 0%, #9356dc 100%);
   font-weight: bold;
 }
-.etape:hover .etape__icon--icon3 {
-  color: grey;
+.etape:hover .etape__icon {
+  color: #9356dc;
 }
 .etape__nombre {
   display: flex;
@@ -255,11 +253,6 @@ h2 {
 .etape__icon {
   font-size: 20px;
   color: grey;
-  margin-right: 20px;
-}
-.etape__icon--icon3 {
-  color: #9356dc;
-  font-size: 20px;
   margin-right: 20px;
 }
 .etape__texte {
@@ -301,10 +294,15 @@ h2 {
 
 .carte {
   background: white;
-  box-shadow: 0px 0px 11px -3px #000000;
+  box-shadow: 0px 0px 11px -3px #a8a8a8;
   border-radius: 20px;
   width: 88%;
   margin: 20px auto;
+}
+@media all and (min-width: 576px) {
+  .carte {
+    width: 80%;
+  }
 }
 @media all and (min-width: 992px) {
   .carte {
@@ -315,7 +313,7 @@ h2 {
   cursor: pointer;
   transform: scale(1.03);
   transition: 0.5s;
-  box-shadow: 0px 0px 11px -1px #000000;
+  box-shadow: 0px 0px 11px -1px #a6a6a6;
 }
 .carte__photo {
   width: 100%;

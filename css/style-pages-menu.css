@@ -57,7 +57,7 @@ body {
 
 .header-restaurant__photo {
   width: 100%;
-  height: 280px;
+  height: 240px;
   position: relative;
   z-index: -1;
 }
@@ -133,7 +133,7 @@ h1 {
 }
 @media all and (min-width: 768px) {
   .coeur__coeur-blanc {
-    width: 38px;
+    width: 28px;
   }
 }
 
@@ -159,29 +159,6 @@ h1 {
   }
 }
 
-.entrees-plats-desserts {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-@media all and (min-width: 768px) {
-  .entrees-plats-desserts section {
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-@media all and (min-width: 1200px) {
-  .entrees-plats-desserts {
-    display: flex;
-    justify-content: space-between;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-  .entrees-plats-desserts > section {
-    width: calc(100% / 3 - 20px);
-  }
-}
-
 @keyframes apparition-titre-menu {
   from {
     opacity: 0;
@@ -204,6 +181,30 @@ h1 {
   animation-delay: 0.3s;
 }
 
+.entrees-plats-desserts {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media all and (min-width: 768px) {
+  .entrees-plats-desserts section {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media all and (min-width: 1200px) {
+  .entrees-plats-desserts {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .entrees-plats-desserts > section {
+    width: calc(100% / 3 - 20px);
+    max-width: 350px;
+  }
+}
+
 .carte-plat {
   width: 100%;
   display: flex;
@@ -212,7 +213,8 @@ h1 {
   margin-bottom: 15px;
   background-color: white;
   border-radius: 15px;
-  box-shadow: 0px 0px 11px -3px #000000;
+  font-size: 15px;
+  box-shadow: 0px 0px 11px -3px #a8a8a8;
   overflow: hidden;
   position: relative;
   animation: apparition-cartes-plats 1s ease-out;
@@ -226,7 +228,6 @@ h1 {
 .carte-plat__nom-plat {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -234,7 +235,6 @@ h1 {
 .carte-plat__description-plat {
   margin-top: 0px;
   margin-bottom: 0;
-  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -242,17 +242,14 @@ h1 {
 .carte-plat__prix-plat {
   padding: 10px 20px;
   align-self: flex-end;
-  margin-left: auto;
-}
-.carte-plat__prix-plat .prix {
   font-weight: bold;
-  font-size: 15px;
+  margin-left: auto;
 }
 .carte-plat:hover {
   cursor: pointer;
   transform: scale(1.03);
   transition: 0.5s;
-  box-shadow: 0px 0px 11px -1px #000000;
+  box-shadow: 0px 0px 11px -1px #a6a6a6;
 }
 .carte-plat:hover .carte-plat_boite-icon {
   width: 65px;
@@ -319,7 +316,7 @@ h1 {
 }
 
 .icon-check {
-  font-size: 18px;
+  font-size: 15px;
   color: #99e2d0;
   background: white;
   border-radius: 50%;
@@ -334,22 +331,20 @@ h1 {
 }
 
 .bouton-commander {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   color: white;
   background: linear-gradient(to bottom right, #ff79da, #9356dc);
   width: 200px;
   border-radius: 50px;
   margin: 40px auto 0 auto;
   padding: 17px;
-  box-shadow: 0px 0px 11px -3px #000000;
+  box-shadow: 0px 0px 11px -3px #a8a8a8;
 }
 .bouton-commander:hover {
   cursor: pointer;
   transform: scale(1.02);
   transition: 0.2s;
-  box-shadow: 0px 0px 11px -1px #000000;
+  box-shadow: 0px 0px 11px -1px #a6a6a6;
   background: linear-gradient(to bottom right, #ff79da 20%, #9356dc 100%);
 }
 

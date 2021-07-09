@@ -18,7 +18,7 @@ footer {
   font-family: "Roboto";
 }
 
-//création du loader
+//loader
 .chargement {
   position: fixed;
   width: 100%;
@@ -129,6 +129,7 @@ footer {
   }
   &__icon-map {
     font-size: 18px;
+    margin-right: 5px;
     @include responsive(tablette) {
       font-size: 20px;
     }
@@ -138,6 +139,7 @@ footer {
     font-size: 16px;
     background: $couleur-gris-champs-recherche;
     text-align: center;
+    width: 160px;
     @include responsive(tablette) {
       font-size: 20px;
     }
@@ -214,11 +216,6 @@ h2 {
     font-size: 20px;
     color: grey;
     margin-right: 20px;
-    &--icon3 {
-      color: $couleur-primaire;
-      font-size: 20px;
-      margin-right: 20px;
-    }
   }
   &__texte {
     font-size: 17px;
@@ -267,10 +264,12 @@ h2 {
   border-radius: 20px;
   width: 88%;
   margin: 20px auto;
+  @include responsive(mobile-large) {
+    width: 80%;
+  }
   @include responsive(desktop) {
     font-size: 20px;
   }
-
   &:hover {
     @include survol-carte;
   }
@@ -369,7 +368,7 @@ h2 {
   }
 }
 
-//limite de taille d'écran
+// centrage site, taille d'écran maximum
 .conteneursite {
   @include responsive(desktop-extra-large) {
     max-width: 1440px;
